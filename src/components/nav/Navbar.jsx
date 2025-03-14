@@ -1,142 +1,81 @@
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-} from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import React from "react";
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable no-unused-vars */
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import logo from "../../assets/images/favicon.png";
+import close from "../../assets/images/signs-close-icon-png.webp";
+import Menu from "../../assets/images/icon-menu-bar-red-NxJBZd9-600.jpg";
 import { Link } from "react-router-dom";
-import {
-  Home,
-  Inbox,
-  MenuBook,
-  SupervisedUserCircleSharp,
-} from "@mui/icons-material";
+import { AbcOutlined, Home, MenuBook, RoomService } from "@mui/icons-material";
 
-const navigation = [
-  { name: "Home", icon: <Home className="size-6" />, href: "/", current: true },
-  {
-    name: "Team",
-    icon: <SupervisedUserCircleSharp className="size-6" />,
-    href: "/Team-2464-632/new",
-    current: false,
-  },
-  {
-    name: "About",
-    icon: <Inbox className="size-6" />,
-    href: "/About-73297-839/us",
-    current: false,
-  },
-  {
-    name: "Menu",
-    icon: <MenuBook className="size-6" />,
-    href: "/Menu-7937-83/list",
-    current: false,
-  },
+export const navLinks = [
+  { id: "home", title: "/", icon: <Home /> },
+  { id: "features", title: "/", icon: <RoomService /> },
+  { id: "product", title: "/Menu-7937-83/list", icon: <MenuBook /> },
+  { id: "clients", title: "/About-73297-839/us", icon: <AbcOutlined /> },
 ];
 
-export default function Example() {
+const Navbar = () => {
+  const [active, setActive] = useState("Home");
+  const [toggle, setToggle] = useState(false);
+
   return (
-    <Disclosure as="nav" className="w-full bg-gray-800">
-      <div className="mx-auto w-full px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
-              <span className="absolute -inset-0.5" />
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon
-                aria-hidden="true"
-                className="block size-6 group-data-open:hidden"
-              />
-              <XMarkIcon
-                aria-hidden="true"
-                className="hidden size-6 group-data-open:block"
-              />
-            </DisclosureButton>
-          </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex shrink-0 items-center">
-              <img alt="" src={logo} className="h-8 w-auto" />
-            </div>
-            <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4">
-                {navigation.map((item) => (
-                  <Link to={item.href}>
-                    <DisclosureButton>{item.icon}</DisclosureButton>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <b>
-              <span className="absolute -inset-1.5" />
-              <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="size-6" />
-            </b>
+    <motion.nav
+      className="w-full flex py-6 justify-between items-center navbar"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      {/* Logo */}
+      <motion.h1
+        className="text-3xl text-white"
+        whileHover={{ scale: 1.1 }}
+        transition={{ duration: 0.3 }}
+      >
+        <img src={logo} className="w-10" alt="" />
+      </motion.h1>
 
-            {/* Profile dropdown */}
-            <Menu as="div" className="relative ml-3">
-              <div>
-                <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">Open user menu</span>
-                  <img
-                    alt=""
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    className="size-8 rounded-full"
-                  />
-                </MenuButton>
-              </div>
-              <MenuItems
-                transition
-                className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
-              >
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
-                  >
-                    Your Profile
-                  </a>
-                </MenuItem>
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
-                  >
-                    Settings
-                  </a>
-                </MenuItem>
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
-                  >
-                    Sign out
-                  </a>
-                </MenuItem>
-              </MenuItems>
-            </Menu>
-          </div>
-        </div>
+      {/* Desktop Navigation */}
+      <ul className="list-none sm:flex hidden gap-6 justify-end items-center flex-1">
+        {navLinks.map((nav, index) => (
+          <Link to={nav.title} key={index}>
+            <motion.button>{nav.icon}</motion.button>
+          </Link>
+        ))}
+      </ul>
+
+      {/* Mobile Navigation */}
+      <div className="sm:hidden flex flex-1 justify-end items-center">
+        <button>
+          <motion.img
+            src={toggle ? close : Menu}
+            alt="Menu"
+            className="w-full h-[28px] object-cover"
+            onClick={() => setToggle(!toggle)}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3 }}
+          />
+        </button>
+        {/* Mobile Sidebar */}
+        <motion.div
+          className={`${
+            !toggle ? "hidden" : "flex"
+          } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: toggle ? 1 : 0, x: toggle ? 0 : 50 }}
+          transition={{ duration: 0.3 }}
+        >
+          <ul className="list-none flex justify-end items-start flex-1 flex-col">
+            {navLinks.map((nav, index) => (
+              <Link to={nav.title} key={index}>
+                <motion.button>{nav.icon}</motion.button>
+              </Link>
+            ))}
+          </ul>
+        </motion.div>
       </div>
-
-      <DisclosurePanel className="sm:hidden">
-        <div className="space-y-1 px-2 pt-2 pb-3">
-          {navigation.map((item) => (
-            <Link to={item.href}>
-              <DisclosureButton>{item.icon}</DisclosureButton>
-            </Link>
-          ))}
-        </div>
-      </DisclosurePanel>
-    </Disclosure>
+    </motion.nav>
   );
-}
+};
+
+export default Navbar;
