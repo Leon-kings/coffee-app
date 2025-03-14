@@ -7,27 +7,38 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/react";
-import {
-  Bars3Icon,
-  BellIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import logo from "../../assets/images/favicon.png";
 import { Link } from "react-router-dom";
-import { Home, Inbox, MenuBook, SupervisedUserCircleSharp } from "@mui/icons-material";
-
+import {
+  Home,
+  Inbox,
+  MenuBook,
+  SupervisedUserCircleSharp,
+} from "@mui/icons-material";
 
 const navigation = [
-  { name: "Home", icon: <Home className="size-6"/>, href: "/", current: true },
-  { name: "Team", icon: <SupervisedUserCircleSharp className="size-6"/>, href: "/Team-2464-632/new", current: false },
-  { name: "About", icon: <Inbox className="size-6" />, href: "/About-73297-839/us", current: false },
-  { name: "Menu", icon: <MenuBook className="size-6"/>, href: "/Menu-7937-83/list", current: false },
+  { name: "Home", icon: <Home className="size-6" />, href: "/", current: true },
+  {
+    name: "Team",
+    icon: <SupervisedUserCircleSharp className="size-6" />,
+    href: "/Team-2464-632/new",
+    current: false,
+  },
+  {
+    name: "About",
+    icon: <Inbox className="size-6" />,
+    href: "/About-73297-839/us",
+    current: false,
+  },
+  {
+    name: "Menu",
+    icon: <MenuBook className="size-6" />,
+    href: "/Menu-7937-83/list",
+    current: false,
+  },
 ];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export default function Example() {
   return (
@@ -56,19 +67,9 @@ export default function Example() {
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
                 {navigation.map((item) => (
-                  <button
-                    key={item.name}
-                    href={item.href}
-                    aria-current={item.current ? "page" : undefined}
-                    className={classNames(
-                      item.current
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                      "rounded-md px-3 py-2 text-sm font-medium"
-                    )}
-                  >
-                    {item.icon}
-                  </button>
+                  <Link to={item.href}>
+                    <DisclosureButton>{item.icon}</DisclosureButton>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -130,20 +131,9 @@ export default function Example() {
       <DisclosurePanel className="sm:hidden">
         <div className="space-y-1 px-2 pt-2 pb-3">
           {navigation.map((item) => (
-            <DisclosureButton
-              key={item.name}
-              as="a"
-              href={item.href}
-              aria-current={item.current ? "page" : undefined}
-              className={classNames(
-                item.current
-                  ? "bg-gray-900 text-white"
-                  : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                "block rounded-md px-3 py-2 text-base font-medium"
-              )}
-            >
-              {item.icon}
-            </DisclosureButton>
+            <Link to={item.href}>
+              <DisclosureButton>{item.icon}</DisclosureButton>
+            </Link>
           ))}
         </div>
       </DisclosurePanel>

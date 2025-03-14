@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 // images
 import about from "../../assets/images/waiter-serving-coffee-to-woman-at-table-free-photo.jpg";
 import { Facebook, Instagram, LinkedIn, Twitter } from "@mui/icons-material";
+import About1 from "./Main";
 const AboutSection = () => {
   return (
     <section className="w-full justify-center dark:text-white text-white pt-32 pb-32">
@@ -109,6 +110,7 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
+      <About1 />
     </section>
   );
 };
