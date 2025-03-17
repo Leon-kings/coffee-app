@@ -73,14 +73,7 @@ const AboutSection = () => {
                 the monetisation of the rural economy.
               </p>
               <ul className="social flex space-x-4">
-                <li>
-                  <button
-                    href="#"
-                    className="text-gray-600 hover:text-orange-500 transition duration-300"
-                  >
-                    <Facebook className="size-6" />
-                  </button>
-                </li>
+              
                 <li>
                   <button
                     href="#"
