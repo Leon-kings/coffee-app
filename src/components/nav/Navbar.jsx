@@ -62,7 +62,7 @@ const Navbar = () => {
           className={`${
             !toggle ? "hidden" : "flex"
           } p-6 bg-black-gradient absolute top-20 right-0 my-2 min-w-[140px] rounded-xl sidebar`}
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: 0, x: 0 }}
           animate={{ opacity: toggle ? 1 : 0, x: toggle ? 0 : 50 }}
           transition={{ duration: 0.3 }}
         >
