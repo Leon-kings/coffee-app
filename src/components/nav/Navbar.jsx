@@ -11,7 +11,7 @@ import { Home, MenuBook, RoomService, ShoppingBag } from "@mui/icons-material";
 export const navLinks = [
   { id: "home", title: "/", icon: <Home /> },
   { id: "features", title: "/Coffee-279237-803/Menu", icon: <RoomService /> },
-  { id: "product", title: "/Menu-7937-83/list", icon: <MenuBook /> },
+  { id: "product", title: "/Product/234-345/list", icon: <MenuBook /> },
   { id: "clients", title: "/About-73297-839/us", icon: <ShoppingBag /> },
 ];
 

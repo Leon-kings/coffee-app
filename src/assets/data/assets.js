@@ -88,28 +88,43 @@ export const about = [
   },
 ];
 export const customers = [
-    {
-      id: 1,
-      image: "https://m.media-amazon.com/images/M/MV5BMzA2MTRjMmMtNTViYi00Zjc2LTg5NDUtNWI3ZTZmMDI5N2QwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-      name: "Justyna Helen",
-      role: "Coffee Lover",
-      feedback:
-        "My favorite espresso. Anyone who enjoys a good espresso should definitely order their espresso!! And its clean, like all their coffee; no added poisons. Can't beat that. Enjoy!!",
-    },
-    {
-      id: 2,
-      image: 'https://assets.teenvogue.com/photos/5ea71ac02d1714000895137a/4:3/w_1440,h_1080,c_limit/James%202.jpg',
-      name: "Fajar Siddiq",
-      role: "Coffee Enthusiast",
-      feedback:
-        "Your Komodo Decaf coffee is the best decaf I've ever tasted. I really like the full-bodied, low-acid, espresso type of coffee, and it seems hard to find in a decaf coffee. So glad to have discovered The Coffee Scoop.",
-    },
-    {
-      id: 3,
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/James_Marsters_%2853319510570%29.jpg/800px-James_Marsters_%2853319510570%29.jpg',
-      name: "Rob Hope",
-      role: "Enthusiasts",
-      feedback:
-        "I buy my Komodo Decaf at Frey's and I love it so much, it was on my Christmas list and now in my cup. It is the best organic Swiss water process (only kind I drink) coffee I have ever had! Dark, rich, smooth and delicious. Worth every penny. Thank you!",
-    },
-  ];
+  {
+    id: 1,
+    image:
+      "https://m.media-amazon.com/images/M/MV5BMzA2MTRjMmMtNTViYi00Zjc2LTg5NDUtNWI3ZTZmMDI5N2QwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    name: "Justyna Helen",
+    role: "Coffee Lover",
+    feedback:
+      "My favorite espresso. Anyone who enjoys a good espresso should definitely order their espresso!! And its clean, like all their coffee; no added poisons. Can't beat that. Enjoy!!",
+  },
+  {
+    id: 2,
+    image:
+      "https://assets.teenvogue.com/photos/5ea71ac02d1714000895137a/4:3/w_1440,h_1080,c_limit/James%202.jpg",
+    name: "Fajar Siddiq",
+    role: "Coffee Enthusiast",
+    feedback:
+      "Your Komodo Decaf coffee is the best decaf I've ever tasted. I really like the full-bodied, low-acid, espresso type of coffee, and it seems hard to find in a decaf coffee. So glad to have discovered The Coffee Scoop.",
+  },
+  {
+    id: 3,
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/James_Marsters_%2853319510570%29.jpg/800px-James_Marsters_%2853319510570%29.jpg",
+    name: "Rob Hope",
+    role: "Enthusiasts",
+    feedback:
+      "I buy my Komodo Decaf at Frey's and I love it so much, it was on my Christmas list and now in my cup. It is the best organic Swiss water process (only kind I drink) coffee I have ever had! Dark, rich, smooth and delicious. Worth every penny. Thank you!",
+  },
+];
+// products-listing
+export const products = [
+  { id: 1, name: "Product A", price: 20, image: image },
+  { id: 2, name: "Product B", price: 35, image: image1 },
+  { id: 3, name: "Product C", price: 50, image: image2 },
+  { id: 4, name: "Product D", price: 20, image: image3 },
+  { id: 5, name: "Product E", price: 35, image: img },
+  { id: 6, name: "Product F", price: 50, image: img1 },
+  { id: 7, name: "Product D", price: 20, image: img2 },
+  { id: 8, name: "Product E", price: 35, image: img3 },
+  { id: 9, name: "Product F", price: 50, image: img4 },
+];
