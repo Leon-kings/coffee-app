@@ -39,12 +39,12 @@ const Testimony = () => {
               transition={{ duration: 1, delay: customer.id * 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="w-full grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2">
-                <div className="w-full">
+              <div className="w-full ">
+                <div className="w-full rounded-full">
                   <img
                     src={customer.image}
-                    alt={customer.name}
-                    className="w-full h-full rounded-2xl object-cover"
+                    alt=""
+                    className="w-full h-[250px] rounded-full object-cover"
                   />
                 </div>
                 <div className="w-full p-4">

@@ -11,6 +11,9 @@ import image1 from "../images/Vietnamese-vanilla-coffee-drink-sq-lr-jpg.webp";
 import image2 from "../images/all_about_black_coffee.webp";
 import image3 from "../../assets/images/coffee1.webp";
 //
+import testify from "../images/James 2.webp";
+import testify1 from "../images/James_Marsters_(53319510570).jpg";
+import testify2 from "../images/MV5BMzA2MTRjMmMtNTViYi00Zjc2LTg5NDUtNWI3ZTZmMDI5N2QwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg";
 export const images = [
   {
     image: img,
@@ -90,8 +93,7 @@ export const about = [
 export const customers = [
   {
     id: 1,
-    image:
-      "https://m.media-amazon.com/images/M/MV5BMzA2MTRjMmMtNTViYi00Zjc2LTg5NDUtNWI3ZTZmMDI5N2QwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    image: testify,
     name: "Justyna Helen",
     role: "Coffee Lover",
     feedback:
@@ -99,8 +101,7 @@ export const customers = [
   },
   {
     id: 2,
-    image:
-      "https://assets.teenvogue.com/photos/5ea71ac02d1714000895137a/4:3/w_1440,h_1080,c_limit/James%202.jpg",
+    image: testify1,
     name: "Fajar Siddiq",
     role: "Coffee Enthusiast",
     feedback:
@@ -108,8 +109,7 @@ export const customers = [
   },
   {
     id: 3,
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/James_Marsters_%2853319510570%29.jpg/800px-James_Marsters_%2853319510570%29.jpg",
+    image: testify2,
     name: "Rob Hope",
     role: "Enthusiasts",
     feedback:
@@ -118,13 +118,13 @@ export const customers = [
 ];
 // products-listing
 export const products = [
-  { id: 1, name: "Product A", price: 20, image: image },
-  { id: 2, name: "Product B", price: 35, image: image1 },
-  { id: 3, name: "Product C", price: 50, image: image2 },
-  { id: 4, name: "Product D", price: 20, image: image3 },
-  { id: 5, name: "Product E", price: 35, image: img },
-  { id: 6, name: "Product F", price: 50, image: img1 },
-  { id: 7, name: "Product D", price: 20, image: img2 },
-  { id: 8, name: "Product E", price: 35, image: img3 },
-  { id: 9, name: "Product F", price: 50, image: img4 },
+  { id: 1, name: "Cock Tail", price: 20, image: image },
+  { id: 2, name: "French Vanilla Coffee", price: 35, image: image1 },
+  { id: 3, name: "Black Coffee", price: 50, image: image2 },
+  { id: 4, name: "Gollira High-Land Coffee", price: 20, image: image3 },
+  { id: 5, name: "Vanilla Coffee", price: 35, image: img },
+  { id: 6, name: "Vanilla Honey Coffee", price: 50, image: img1 },
+  { id: 7, name: "Rwandan Vanilla Coffee", price: 20, image: img2 },
+  { id: 8, name: "Rwandan Tea", price: 35, image: img3 },
+  { id: 9, name: "High Land Coffee", price: 50, image: img4 },
 ];

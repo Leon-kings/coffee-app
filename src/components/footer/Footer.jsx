@@ -41,7 +41,10 @@ const FooterSection = () => {
   };
 
   return (
-    <section id="footer" className="w-full bg-gray-900 dark:text-white text-white">
+    <section
+      id="footer"
+      className="w-full bg-gray-900 dark:text-white text-white"
+    >
       {/* Footer Subscribe */}
       <div className="w-full bg-white text-black rounded-2xl pt-20 pb-20">
         <div className="container mx-auto px-4">
@@ -68,7 +71,10 @@ const FooterSection = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <form onSubmit={handleSubmit} className="flex text-black border-black bg-gray-500">
+                <form
+                  onSubmit={handleSubmit}
+                  className="flex text-black border-black bg-gray-500"
+                >
                   <input
                     type="email"
                     placeholder="Enter Your Email"
@@ -107,7 +113,20 @@ const FooterSection = () => {
                 <h4 className="footer_title text-xl font-bold mb-4">
                   About Us
                 </h4>
-                <p className="text-gray-400">
+                <motion.span
+                  className="line block w-16 h-1 bg-orange-500 mx-auto mt-4 relative"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <motion.span
+                    className="box absolute w-2 h-2 bg-orange-500 rounded-full -top-1 -left-1"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: 0.5, duration: 0.5 }}
+                  ></motion.span>
+                </motion.span>
+                <p className="text-gray-400 pt-4">
                   By drinking this coffee, you are investing in women farmers as
                   they produce high quality products that increase economic
                   independence for themselves and their families.
@@ -161,11 +180,32 @@ const FooterSection = () => {
                 <h4 className="footer_title text-xl font-bold mb-4">
                   Opening Hours
                 </h4>
-                <ul className="text-gray-400">
-                  <li>Mon-Fri: <b> 08.00 A.M - 10.00 P.M</b></li>
-                  <li>Saturday: <b> 08.00 A.M - 02.00 P.M</b></li>
-                  <li>Sunday: <b> Closed</b></li>
-                  <li>Half-Holidays: <b> 08.00 A.M - 02.00 P.M</b></li>
+                <motion.span
+                  className="line block w-16 h-1 bg-orange-500 mx-auto mt-4 relative"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <motion.span
+                    className="box absolute w-2 h-2 bg-orange-500 rounded-full -top-1 -left-1"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: 0.5, duration: 0.5 }}
+                  ></motion.span>
+                </motion.span>
+                <ul className="text-gray-400 pt-4">
+                  <li>
+                    Mon-Fri: <b> 08.00 A.M - 10.00 P.M</b>
+                  </li>
+                  <li>
+                    Saturday: <b> 08.00 A.M - 02.00 P.M</b>
+                  </li>
+                  <li>
+                    Sunday: <b> Closed</b>
+                  </li>
+                  <li>
+                    Half-Holidays: <b> 08.00 A.M - 02.00 P.M</b>
+                  </li>
                 </ul>
               </motion.div>
             </div>
@@ -182,7 +222,20 @@ const FooterSection = () => {
                 <h4 className="footer_title text-xl font-bold mb-4">
                   Instagram Feed
                 </h4>
-                <div className="grid grid-cols-4 gap-2">
+                <motion.span
+                  className="line block w-16 h-1 bg-orange-500 mx-auto mt-4 relative"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <motion.span
+                    className="box absolute w-2 h-2 bg-orange-500 rounded-full -top-1 -left-1"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: 0.5, duration: 0.5 }}
+                  ></motion.span>
+                </motion.span>
+                <div className="grid grid-cols-4 gap-2 pt-4">
                   {about.map((image) => (
                     <Card key={image.id}>
                       <img

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import img from "../../assets/images/cover-image-low-sugar-cocktails.webp";
 import img1 from "../../assets/images/Coffee.webp";
 import img2 from "../../assets/images/coffee1.webp";
+import { Link } from "react-router-dom";
 
 const About1 = () => {
   return (
@@ -93,6 +94,19 @@ const About1 = () => {
               >
                 Why Choose Us
               </motion.span>
+              <motion.span
+                className="line block w-16 h-1 bg-orange-500 mx-auto mt-4 relative"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                transition={{ duration: 0.8 }}
+              >
+                <motion.span
+                  className="box absolute w-2 h-2 bg-orange-500 rounded-full -top-1 -left-1"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ delay: 0.5, duration: 0.5 }}
+                ></motion.span>
+              </motion.span>
               <motion.h2
                 className="mb-5 text-3xl font-bold text-dark dark:text-white sm:text-[40px]/[48px]"
                 initial={{ opacity: 0 }}
@@ -126,16 +140,17 @@ const About1 = () => {
                 brand. Secure a consistent brand image with a domain name that
                 matches your business.
               </motion.p>
-              <motion.button
-                href="javascript:void(0)"
-                className="inline-flex items-center justify-center py-3 text-base font-medium text-center text-white border border-transparent rounded-md px-7 bg-primary hover:bg-opacity-90"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 1.6 }}
-                viewport={{ once: true }}
-              >
-                Get Started
-              </motion.button>
+              <Link to={"/Product/234-345/list"}>
+                <motion.button
+                  className="inline-flex items-center justify-center py-3 text-base font-medium text-center text-white border border-transparent rounded-md px-7 bg-primary hover:bg-opacity-90"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 1.6 }}
+                  viewport={{ once: true }}
+                >
+                  Get Your Coffee
+                </motion.button>
+              </Link>
             </motion.div>
           </div>
         </div>

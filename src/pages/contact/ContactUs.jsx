@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { LocationCity, TrackChanges } from "@mui/icons-material";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -74,19 +75,28 @@ const ContactSection = () => {
                 </h4>
                 <span className="line block mt-4">
                   <motion.span
-                    className="box bg-yellow-500 h-1 w-16 inline-block"
+                    className="line block w-16 h-1 bg-orange-500 mx-auto mt-4 relative"
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
-                    transition={{ duration: 0.8, delay: 0.5 }}
-                    viewport={{ once: true }}
-                  ></motion.span>
+                    transition={{ duration: 0.8 }}
+                  >
+                    <motion.span
+                      className="box absolute w-2 h-2 bg-orange-500 rounded-full -top-1 -left-1"
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{ delay: 0.5, duration: 0.5 }}
+                    ></motion.span>
+                  </motion.span>
                 </span>
               </motion.div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="mt-8 bg-white rounded-2xl text-black p-6">
+          <form
+            onSubmit={handleSubmit}
+            className="mt-8 bg-white rounded-2xl text-black p-6"
+          >
             <div className="w-full grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
               <div className="col-lg-6 px-4">
                 <motion.div
@@ -159,7 +169,6 @@ const ContactSection = () => {
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                    
                     required
                   ></textarea>
                 </motion.div>
@@ -208,6 +217,25 @@ const ContactSection = () => {
 
       {/* Google Map */}
       <div className="contact_map">
+        <div className="w-full pb-4 pt-4">
+          <div className="h2">
+            Locate <span></span>
+            <LocationCity className="size-6 text-red-300" />{" "}
+          </div>
+          <motion.span
+            className="line block w-16 h-1 bg-orange-500 mx-auto mt-4 relative"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.span
+              className="box absolute w-2 h-2 bg-orange-500 rounded-full -top-1 -left-1"
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+            ></motion.span>
+          </motion.span>
+        </div>
         <div className="h-90 w-full">
           <iframe
             id="gmap_canvas"
