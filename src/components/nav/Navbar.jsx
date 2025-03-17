@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <motion.nav
       className="w-full flex py-6 justify-between items-center navbar"
-      initial={{ opacity: 0, y: -50 }}
+      initial={{ opacity: 0, y: 0 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
@@ -63,7 +63,7 @@ const Navbar = () => {
             !toggle ? "hidden" : "flex"
           } p-6 bg-black-gradient absolute top-20 right-0 my-2 min-w-[140px] rounded-xl sidebar`}
           initial={{ opacity: 0, x: 0 }}
-          animate={{ opacity: toggle ? 1 : 0, x: toggle ? 0 : 10 }}
+          animate={{ opacity: toggle ? 1 : 0, x: toggle ? 0 : 0 }}
           transition={{ duration: 0.3 }}
         >
           <ul className="list-none flex justify-end items-start flex-1 flex-col">
