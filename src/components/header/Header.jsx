@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Header = () => {
   return (
     <div id="home" className="w-full min-h-screen dark:text-white items-center">
-      <div className="single_slider bg-cover flex items-center">
+      <div className=" bg-cover flex items-center">
         <div className="container mx-auto">
           <div className="row">
             <div className="col-md-9">

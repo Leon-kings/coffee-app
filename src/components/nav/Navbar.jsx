@@ -6,17 +6,16 @@ import logo from "../../assets/images/favicon.png";
 import close from "../../assets/images/signs-close-icon-png.webp";
 import Menu from "../../assets/images/icon-menu-bar-red-NxJBZd9-600.jpg";
 import { Link } from "react-router-dom";
-import { AbcOutlined, Home, MenuBook, RoomService } from "@mui/icons-material";
+import { Home, MenuBook, RoomService, ShoppingBag } from "@mui/icons-material";
 
 export const navLinks = [
   { id: "home", title: "/", icon: <Home /> },
-  { id: "features", title: "/", icon: <RoomService /> },
+  { id: "features", title: "/Coffee-279237-803/Menu", icon: <RoomService /> },
   { id: "product", title: "/Menu-7937-83/list", icon: <MenuBook /> },
-  { id: "clients", title: "/About-73297-839/us", icon: <AbcOutlined /> },
+  { id: "clients", title: "/About-73297-839/us", icon: <ShoppingBag /> },
 ];
 
 const Navbar = () => {
-  const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -32,7 +31,9 @@ const Navbar = () => {
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.3 }}
       >
-        <img src={logo} className="w-10" alt="" />
+        <Link to={"/"}>
+          <img src={logo} className="w-10 left-0" alt="" />
+        </Link>
       </motion.h1>
 
       {/* Desktop Navigation */}

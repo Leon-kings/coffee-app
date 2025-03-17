@@ -6,6 +6,7 @@ import FooterSection from "./components/footer/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Menu from "./pages/menu/Menu";
+import CoffeeSection from "./components/coffee/CoffeePart";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route element={<Home />} path="/" />
             <Route element={<AboutSection />} path="/About-73297-839/us" />
             <Route element={<Menu />} path="/Menu-7937-83/list" />
+            <Route element={<CoffeeSection />} path="/Coffee-279237-803/Menu" />
           </Routes>
           <FooterSection />
         </BrowserRouter>
