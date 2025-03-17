@@ -16,8 +16,8 @@ const Header = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
               >
-                <h2 className="slider_title text-4xl font-bold mb-4">
-                  Royalty-free Black Coffee Honey, Coffee &Tea
+                <h2 className="w-full pt-36 text-4xl font-bold mb-4">
+                  Royalty-free Black Coffee Honey, Coffee & Tea ..
                 </h2>
                 <motion.span
                   className="line block w-16 h-1 bg-orange-500 mx-auto mt-4 relative"
@@ -33,7 +33,7 @@ const Header = () => {
                   ></motion.span>
                 </motion.span>
                 <motion.p
-                  className="mb-6 mt-10"
+                  className="mb-16 pt-6 p-4 justify-items-center justify-center items-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5, duration: 1 }}

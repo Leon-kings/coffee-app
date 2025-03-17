@@ -30,7 +30,7 @@ const CoffeeMenu = () => {
           <div className="row flex justify-center">
             <div className="col-md-12 text-center">
               <motion.div
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}

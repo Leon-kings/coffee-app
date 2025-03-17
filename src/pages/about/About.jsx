@@ -50,7 +50,7 @@ const AboutSection = () => {
           <div className="w-full bg-gray-900 rounded-2xl p-4">
             <motion.div
               className="about_content mt-12"
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
               viewport={{ once: true }}
@@ -73,7 +73,6 @@ const AboutSection = () => {
                 the monetisation of the rural economy.
               </p>
               <ul className="social flex space-x-4">
-              
                 <li>
                   <button
                     href="#"

@@ -27,12 +27,12 @@ const CoffeeSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  gap-4 justify-center">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-4 justify-center">
           {coffeeItems.map((item) => (
             <motion.div
               key={item.id}
               className="bg-white rounded-2xl p-4 text-black"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: item.delay }}
               viewport={{ once: true }}

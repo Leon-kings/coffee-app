@@ -1,3 +1,4 @@
+ 
 import { Box, Container } from "@mui/material";
 import React from "react";
 import Header from "../../components/header/Header";
@@ -8,6 +9,7 @@ import Testimony from "../testimony/Testimony";
 import Gallery from "../gallery/Gallery";
 import CoffeeMenu from "../coffeemenu/CoffeeMenu";
 import ContactSection from "../contact/ContactUs";
+import ProductList from "../../components/product/ProductList";
 
 export default function Home() {
   return (
@@ -39,6 +41,13 @@ export default function Home() {
           <Box className="w-full text-white ">
             <Container className="w-full text-white dark:text-white">
               <CounterSection />
+            </Container>
+          </Box>
+
+          {/* Coffee Section */}
+          <Box className="w-full text-white ">
+            <Container className="w-full text-white dark:text-white">
+              <ProductList />
             </Container>
           </Box>
 

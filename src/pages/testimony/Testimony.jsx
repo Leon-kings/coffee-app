@@ -29,12 +29,12 @@ const Testimony = () => {
           </div>
         </div>
 
-        <div className="w-full grid lg:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1">
+        <div className="w-full grid lg:grid-cols-3 gap-4 md:grid-cols-3 sm:grid-cols-1">
           {customers.map((customer) => (
             <motion.div
               key={customer.id}
               className="w-full bg-white p-4 rounded-2xl"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: customer.id * 0.2 }}
               viewport={{ once: true }}

@@ -240,7 +240,7 @@ const FooterSection = () => {
                     <Card key={image.id}>
                       <img
                         src={image.url}
-                        alt="instagram"
+                        alt=""
                         className="w-full h-24 object-cover rounded-lg"
                       />
                     </Card>

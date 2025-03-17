@@ -33,7 +33,7 @@ const CounterSection = () => {
         <motion.span
           className="line block w-16 h-1 bg-orange-500 mx-auto mt-4 relative"
           initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
+          whileInView={{ scaleX: 0 }}
           transition={{ duration: 0.8 }}
         >
           <motion.span
@@ -51,7 +51,7 @@ const CounterSection = () => {
               <motion.div
                 key={counter.id}
                 className=""
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: counter.delay }}
                 viewport={{ once: true }}

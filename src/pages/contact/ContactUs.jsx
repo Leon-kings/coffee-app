@@ -101,7 +101,7 @@ const ContactSection = () => {
               <div className="col-lg-6 px-4">
                 <motion.div
                   className="single_form mt-6"
-                  initial={{ opacity: 0, x: -50 }}
+                  initial={{ opacity: 0, x: 0 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: true }}
@@ -120,7 +120,7 @@ const ContactSection = () => {
               <div className="col-lg-6 px-4">
                 <motion.div
                   className="single_form mt-6"
-                  initial={{ opacity: 0, x: 50 }}
+                  initial={{ opacity: 0, x: 0 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: true }}
@@ -225,7 +225,7 @@ const ContactSection = () => {
           <motion.span
             className="line block w-16 h-1 bg-orange-500 mx-auto mt-4 relative"
             initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
+            whileInView={{ scaleX: 0 }}
             transition={{ duration: 0.8 }}
           >
             <motion.span
@@ -241,7 +241,7 @@ const ContactSection = () => {
             id="gmap_canvas"
             src="https://maps.google.com/maps?q=Mission%20District%2C%20San%20Francisco%2C%20CA%2C%20USA&t=&z=13&ie=UTF8&iwloc=&output=embed"
             className="w-full h-full border-0"
-            title="Google Map"
+            title=""
           ></iframe>
         </div>
       </div>
