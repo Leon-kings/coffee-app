@@ -31,7 +31,7 @@ const AboutSection = () => {
         </div>
 
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 items-center">
-          <div className="col-lg-6">
+          <div className="w-full">
             <motion.div
               className="about_image mt-12"
               initial={{ opacity: 0, x: 0 }}
@@ -47,7 +47,7 @@ const AboutSection = () => {
             </motion.div>
           </div>
 
-          <div className="col-lg-6">
+          <div className="w-full bg-gray-900 rounded-2xl p-4">
             <motion.div
               className="about_content mt-12"
               initial={{ opacity: 0, x: -50 }}

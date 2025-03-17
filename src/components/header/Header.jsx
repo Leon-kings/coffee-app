@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div id="home" className="w-full min-h-screen dark:text-white items-center">
-      <div className=" bg-cover flex items-center">
-        <div className="container mx-auto">
-          <div className="row">
+      <div className="w-full bg-cover flex items-center">
+        <div className="w-full mx-auto">
+          <div className="row w-full">
             <div className="col-md-9">
               <motion.div
                 className="py-50"
@@ -22,7 +22,7 @@ const Header = () => {
                 <motion.span
                   className="line block w-16 h-1 bg-orange-500 mx-auto mt-4 relative"
                   initial={{ scaleX: 0 }}
-                  whileInView={{ scaleX: 2 }}
+                  whileInView={{ scaleX: 0 }}
                   transition={{ duration: 0.8 }}
                 >
                   <motion.span

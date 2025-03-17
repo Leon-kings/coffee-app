@@ -26,6 +26,7 @@
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 #counter {
   background-image: url("/src/assets/images/sanremo_coffee_machines_1600x.webp");
