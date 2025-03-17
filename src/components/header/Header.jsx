@@ -26,18 +26,13 @@ const Header = () => {
                   transition={{ duration: 0.8 }}
                 >
                   <motion.span
-                    className="box absolute w-2 h-2 bg-orange-500 rounded-full -top-1 -left-1"
+                    className="box absolute w-2 h-2 bg-orange-500 rounded-full "
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ delay: 0.5, duration: 0.5 }}
                   ></motion.span>
                 </motion.span>
-                <motion.p
-                  className="mb-16 pt-6 p-4 justify-items-center justify-center items-center"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5, duration: 1 }}
-                >
+                <motion.p className="pt-6 p-4 justify-items-center justify-center items-center">
                   Coffee plays a major role in the economy of the country,
                   contributing significantly to foreign exchange earnings and to
                   the monetisation of the rural economy.
