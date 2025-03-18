@@ -16,6 +16,7 @@ import {
   ShoppingCart,
 } from "@mui/icons-material";
 import { products } from "../../assets/data/assets";
+import { PaymentForm } from "../form/Payment";
 const ProductList = () => {
   const [cart, setCart] = useState([]);
 
@@ -146,6 +147,7 @@ const ProductList = () => {
             Total: ${calculateTotal()}
           </Typography>
         </motion.div>
+        <PaymentForm />
       </div>
     </>
   );
