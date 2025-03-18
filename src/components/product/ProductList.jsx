@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Card,
@@ -19,8 +19,30 @@ import { products } from "../../assets/data/assets";
 const ProductList = () => {
   const [cart, setCart] = useState([]);
 
+  // Load cart from localStorage on component mount
+  useEffect(() => {
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+      setCart(JSON.parse(savedCart));
+    }
+  }, []);
+
+  // Save cart to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
   const addToCart = (product) => {
     setCart([...cart, product]);
+  };
+
+  const removeFromCart = (index) => {
+    const newCart = cart.filter((_, i) => i !== index);
+    setCart(newCart);
+  };
+
+  const calculateTotal = () => {
+    return cart.reduce((total, item) => total + item.price, 0);
   };
 
   return (
@@ -82,7 +104,9 @@ const ProductList = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <Typography variant="h6">Cart ({cart.length} items)</Typography>
+          <Typography variant="h6" className="text-white">
+            Cart ({cart.length} items)
+          </Typography>
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             {cart.map((item, index) => (
               <div className="w-full" key={index}>
@@ -97,6 +121,13 @@ const ProductList = () => {
                 <Typography className="text-white bg-blue-300">
                   - ${item.price}/Item
                 </Typography>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => removeFromCart(index)}
+                >
+                  Remove from Cart
+                </Button>
               </div>
             ))}
           </div>
@@ -111,6 +142,9 @@ const ProductList = () => {
               <CurrencyPound className="size-6 text-white" />
             </Button>
           </div>
+          <Typography variant="h6" className="text-white">
+            Total: ${calculateTotal()}
+          </Typography>
         </motion.div>
       </div>
     </>

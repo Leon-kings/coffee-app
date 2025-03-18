@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import logo from "../../assets/images/favicon.png";
+import logo from "../../assets/images/images.png";
 import close from "../../assets/images/signs-close-icon-png.webp";
 import Menu from "../../assets/images/icon-menu-bar-red-NxJBZd9-600.jpg";
 import { Link } from "react-router-dom";
@@ -32,7 +32,7 @@ const Navbar = () => {
         transition={{ duration: 0.3 }}
       >
         <Link to={"/"}>
-          <img src={logo} className="w-10 left-0" alt="" />
+          <img src={logo} className="w-16 h-[60px] rounded-2xl left-0 " alt="" />
         </Link>
       </motion.h1>
 
