@@ -9,7 +9,7 @@ const Header = () => {
       <div className="w-full bg-cover flex items-center">
         <div className="w-full mx-auto">
           <div className="row w-full">
-            <div className="col-md-9">
+            <div className="w-full">
               <motion.div
                 className="py-50"
                 initial={{ opacity: 0, y: 50 }}
@@ -32,7 +32,7 @@ const Header = () => {
                     transition={{ delay: 0.5, duration: 0.5 }}
                   ></motion.span>
                 </motion.span>
-                <motion.p className="pt-6 p-4 justify-items-center justify-center items-center">
+                <motion.p className="pt-6 justify-items-center justify-center items-center">
                   Coffee plays a major role in the economy of the country,
                   contributing significantly to foreign exchange earnings and to
                   the monetisation of the rural economy.
