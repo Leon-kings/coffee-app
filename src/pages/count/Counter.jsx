@@ -65,7 +65,7 @@ const CounterSection = () => {
                       delay={counter.delay}
                     />
                   </b>
-                  <b className="text-white font-bold text-lg mt-4">{counter.label}</b>
+                  <p className="text-white font-bold text-lg mt-4">{counter.label}</p>
                 </div>
               </motion.div>
             ))}
