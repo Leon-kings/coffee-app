@@ -33,7 +33,7 @@ const CounterSection = () => {
         <motion.span
           className="line block w-16 h-1 bg-orange-500 mx-auto mt-4 relative"
           initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.8 }}
         >
           <motion.span
@@ -44,7 +44,7 @@ const CounterSection = () => {
           ></motion.span>
         </motion.span>
       </div>
-      <section id="counter" className="w-full pt-20 pb-20 rounded-2xl">
+      <section id="counter" className="w-full pt-30 pb-20 rounded-2xl">
         <div className="w-full mx-auto px-4">
           <div className="w-full grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3">
             {counters.map((counter) => (

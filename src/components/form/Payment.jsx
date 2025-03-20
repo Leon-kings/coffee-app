@@ -10,7 +10,6 @@ import {
   TextField,
 } from "@mui/material";
 
-
 export const PaymentForm = ({ onPaymentSubmit }) => {
   const [paymentDetails, setPaymentDetails] = useState({
     cardNumber: "",
@@ -30,7 +29,10 @@ export const PaymentForm = ({ onPaymentSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 bg-white text-black dark:text-white dark:bg-black">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-4 rounded-2xl p-6 bg-white text-black"
+    >
       <TextField
         fullWidth
         label="Card Number"

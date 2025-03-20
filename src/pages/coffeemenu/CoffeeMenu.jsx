@@ -53,7 +53,6 @@ const CoffeeMenu = () => {
                 </motion.p>
                 <Link to={"/Product/234-345/list"}>
                   <motion.button
-                    href="/Product/234-345/list"
                     rel="nofollow"
                     className="main-btn inline-block px-8 py-3 text-white font-semibold rounded-lg hover:bg-yellow-600 transition-colors duration-300"
                     initial={{ scale: 0 }}

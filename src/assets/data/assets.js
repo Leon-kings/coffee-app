@@ -14,6 +14,7 @@ import image3 from "../../assets/images/coffee1.webp";
 import testify from "../images/James 2.webp";
 import testify1 from "../images/James_Marsters_(53319510570).jpg";
 import testify2 from "../images/MV5BMzA2MTRjMmMtNTViYi00Zjc2LTg5NDUtNWI3ZTZmMDI5N2QwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg";
+import testify3 from "../images/original-a9a4c188c5e099241d6640eea6e9024a.webp";
 export const images = [
   {
     image: img,
@@ -115,16 +116,24 @@ export const customers = [
     feedback:
       "I buy my Komodo Decaf at Frey's and I love it so much, it was on my Christmas list and now in my cup. It is the best organic Swiss water process (only kind I drink) coffee I have ever had! Dark, rich, smooth and delicious. Worth every penny. Thank you!",
   },
+  {
+    id: 4,
+    image: testify3,
+    name: "Gigo Hope",
+    role: "Enthusiasts",
+    feedback:
+      "I buy my  at Fry's and I love it so much, it was on my Christmas list and now in my cup. It is the best organic Swiss water process (only kind I drink) coffee I have ever had! Dark, rich, smooth and delicious. Worth every penny. Thank you!",
+  },
 ];
 // products-listing
 export const products = [
   { id: 1, name: "Cock Tail", price: 20, image: image },
   { id: 2, name: "French Vanilla Coffee", price: 35, image: image1 },
   { id: 3, name: "Black Coffee", price: 50, image: image2 },
-  { id: 4, name: "Gollira High-Land Coffee", price: 20, image: image3 },
+  { id: 4, name: "Gollira High-Land Coffee", price: 50, image: image3 },
   { id: 5, name: "Vanilla Coffee", price: 35, image: img },
-  { id: 6, name: "Vanilla Honey Coffee", price: 50, image: img1 },
-  { id: 7, name: "Rwandan Vanilla Coffee", price: 20, image: img2 },
+  { id: 6, name: "Vanilla Honey Coffee", price: 20, image: img1 },
+  { id: 7, name: "Rwandan Vanilla Coffee", price: 50, image: img2 },
   { id: 8, name: "Rwandan Tea", price: 35, image: img3 },
   { id: 9, name: "High Land Coffee", price: 50, image: img4 },
 ];

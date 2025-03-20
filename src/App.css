@@ -5,33 +5,19 @@
   text-align: center;
 }
 
-.logo {
-  height: 0.6em;
-  padding: 0.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 #home {
   background-image: url("/src//assets/images/nathan-dumlao-vbt-Fp3b5FA-unsplash-scaled.jpg");
-  width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 16px;
   background-attachment: fixed;
 }
 #counter {
   background-image: url("/src/assets/images/sanremo_coffee_machines_1600x.webp");
+  background-size: cover;
 }
 #menu {
   background-image: url("/src/assets/images/coffee1.webp");
   background-size: cover;
+  border-radius: 15px;
 }

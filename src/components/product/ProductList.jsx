@@ -54,7 +54,7 @@ const ProductList = () => {
         <motion.span
           className="line block w-16 h-1 bg-orange-500 mx-auto mt-4 relative"
           initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.8 }}
         >
           <motion.span
@@ -65,7 +65,7 @@ const ProductList = () => {
           ></motion.span>
         </motion.span>
       </div>
-      <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="p-6 grid grid-cols-1 py-10 md:grid-cols-3 gap-6">
         {products.map((product) => (
           <motion.div
             key={product.id}

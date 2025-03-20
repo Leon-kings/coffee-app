@@ -216,16 +216,13 @@ const ContactSection = () => {
       </div>
 
       {/* Google Map */}
-      <div className="contact_map">
+      <div className="w-full rounded-2xl">
         <div className="w-full pb-4 pt-4">
-          <div className="h2">
-            Locate <span></span>
-            <LocationCity className="size-6 text-red-300" />{" "}
-          </div>
+          <h4 className="color">Location</h4>
           <motion.span
             className="line block w-16 h-1 bg-orange-500 mx-auto mt-4 relative"
             initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
             transition={{ duration: 0.8 }}
           >
             <motion.span
@@ -236,11 +233,11 @@ const ContactSection = () => {
             ></motion.span>
           </motion.span>
         </div>
-        <div className="h-90 w-full">
+        <div className="h-90 w-full py-5">
           <iframe
             id="gmap_canvas"
             src="https://maps.google.com/maps?q=Mission%20District%2C%20San%20Francisco%2C%20CA%2C%20USA&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            className="w-full h-full border-0"
+            className="w-full h-full rounded-3xl border-0"
             title=""
           ></iframe>
         </div>
