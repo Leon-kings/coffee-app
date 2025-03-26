@@ -127,21 +127,10 @@ const ProductList = () => {
                   color="secondary"
                   onClick={() => removeFromCart(index)}
                 >
-                  Remove from Cart
+                  <Cancel className="text-red-500"/>
                 </Button>
               </div>
             ))}
-          </div>
-          <div className="flex w-full gap-4 py-5">
-            <Button color="primary">
-              <Cancel className="size-6" />
-            </Button>
-            <Button color="primary">
-              <CurrencyBitcoin className="size-6 text-white" />
-            </Button>
-            <Button color="primary">
-              <CurrencyPound className="size-6 text-white" />
-            </Button>
           </div>
           <Typography variant="h6" className="text-white">
             Total: ${calculateTotal()}
