@@ -48,7 +48,8 @@ h1,h2 {
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #9ccef1;
+    background-color: #e0e5e9;
+    color: #1e4be1;
     cursor: pointer;
     transition: border-color 0.25s;
   }

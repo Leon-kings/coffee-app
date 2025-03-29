@@ -27,21 +27,46 @@ const ContactSection = () => {
     setLoading(true);
     setError("");
     setSuccess(false);
-
+  
+    // Basic client-side validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setError("Name, email, and message are required");
+      setLoading(false);
+      return;
+    }
+  
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setError("Please enter a valid email address");
+      setLoading(false);
+      return;
+    }
+  
     try {
-      const response = await fetch("https://your-api-endpoint.com/contact", {
+      const response = await fetch("https://coffee-node.onrender.com/api/messages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          // Add any required auth headers if needed
+          // "Authorization": `Bearer ${token}`,
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          // Add any additional metadata
+          timestamp: new Date().toISOString(),
+          source: "website-form"
+        }),
       });
-
-      if (!response.ok) {
-        throw new Error("Failed to send message");
-      }
-
+  
       const result = await response.json();
+  
+      if (!response.ok) {
+        // Handle API error responses
+        throw new Error(result.message || "Failed to send message");
+      }
+  
+      // Success handling
       setSuccess(true);
       setFormData({
         name: "",
@@ -49,13 +74,26 @@ const ContactSection = () => {
         subject: "",
         message: "",
       });
+      
+      // Optional: Reset success message after delay
+      setTimeout(() => setSuccess(false), 5000);
+  
     } catch (err) {
-      setError(err.message || "Something went wrong");
+      console.error("Submission error:", err);
+      
+      // More specific error messages
+      if (err.message.includes("Failed to fetch")) {
+        setError("Network error. Please check your connection.");
+      } else {
+        setError(err.message || "Something went wrong. Please try again later.");
+      }
+      
+      // Optional: Auto-dismiss error after delay
+      setTimeout(() => setError(""), 5000);
     } finally {
       setLoading(false);
     }
   };
-
   return (
     <section id="contact" className="w-full dark:text-white">
       {/* Contact Form */}
