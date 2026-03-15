@@ -250,8 +250,8 @@ export const Navbar = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {nav.icon}
-                <span className="sr-only">{nav.name}</span>
+                {nav.name}
+               
               </motion.button>
             </Link>
           ))}
