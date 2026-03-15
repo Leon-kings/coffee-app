@@ -346,88 +346,7 @@ export const CounterSection = () => {
   };
 
   return (
-    <section className="w-full py-20 relative overflow-hidden">
-      {/* Background with gradient and pattern */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
-        {/* Animated mesh gradient */}
-        <motion.div
-          className="absolute inset-0 opacity-30"
-          animate={{
-            background: [
-              "radial-gradient(circle at 20% 50%, #f97316 0%, transparent 50%)",
-              "radial-gradient(circle at 80% 50%, #fbbf24 0%, transparent 50%)",
-              "radial-gradient(circle at 20% 50%, #f97316 0%, transparent 50%)",
-            ],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        
-        {/* Pattern overlay */}
-        <div 
-          className="absolute inset-0 opacity-5"
-          style={{
-            backgroundImage: "url('https://www.transparenttextures.com/patterns/coffee-beans.png')",
-            backgroundRepeat: "repeat",
-            backgroundSize: "100px"
-          }}
-        />
-      </div>
-
-      {/* Floating coffee beans */}
-      {[...Array(8)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute text-orange-500/10"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            fontSize: `${30 + Math.random() * 60}px`,
-            rotate: `${Math.random() * 360}deg`
-          }}
-          animate={{
-            y: [0, -50, 0],
-            x: [0, Math.random() * 40 - 20, 0],
-            rotate: [0, 360],
-            opacity: [0.1, 0.2, 0.1]
-          }}
-          transition={{
-            duration: 15 + Math.random() * 10,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          <LocalCafe />
-        </motion.div>
-      ))}
-
-      {/* Floating particles */}
-      {[...Array(20)].map((_, i) => (
-        <motion.div
-          key={`particle-${i}`}
-          className="absolute w-1 h-1 bg-orange-500/20 rounded-full"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            y: [0, -30, 0],
-            x: [0, Math.random() * 20 - 10, 0],
-            opacity: [0.2, 0.5, 0.2],
-            scale: [1, 1.5, 1]
-          }}
-          transition={{
-            duration: 3 + Math.random() * 2,
-            repeat: Infinity,
-            ease: "linear",
-            delay: Math.random() * 2
-          }}
-        />
-      ))}
-
+    <section className="w-full py-20 relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-900">
       {/* Main content */}
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
@@ -440,20 +359,7 @@ export const CounterSection = () => {
           <motion.h2
             className="text-4xl md:text-5xl font-bold mb-4"
             variants={titleVariants}
-            style={{
-              background: "linear-gradient(135deg, #fbbf24 0%, #f97316 50%, #fbbf24 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundSize: "200% 200%"
-            }}
-            animate={{
-              backgroundPosition: ["0% 0%", "100% 100%"]
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              repeatType: "reverse"
-            }}
+
           >
             Our Impact by Numbers
           </motion.h2>
@@ -469,18 +375,12 @@ export const CounterSection = () => {
           <motion.span
             className="line block w-24 h-1 mx-auto mt-6 relative"
             variants={lineVariants}
-            style={{
-              background: "linear-gradient(90deg, transparent, #f97316, #fbbf24, #f97316, transparent)"
-            }}
+        
           >
             <motion.span
               className="box absolute w-3 h-3 rounded-full -top-1"
               variants={dotVariants}
-              style={{
-                background: "radial-gradient(circle, #fbbf24, #f97316)",
-                left: "calc(50% - 6px)",
-                boxShadow: "0 0 15px #f97316"
-              }}
+    
             />
           </motion.span>
         </motion.div>
@@ -509,11 +409,7 @@ export const CounterSection = () => {
                 variants={counterVariants}
                 whileHover="hover"
                 whileTap="tap"
-                style={{
-                  boxShadow: hoveredCounter === counter.id 
-                    ? "0 30px 40px -15px rgba(249, 115, 22, 0.5)" 
-                    : "0 10px 20px -5px rgba(0,0,0,0.5)"
-                }}
+    
               >
                 {/* Animated background gradient */}
                 <motion.div
@@ -632,23 +528,6 @@ export const CounterSection = () => {
                     </motion.div>
                   </motion.div>
                 </div>
-
-                {/* Shine effect */}
-                <motion.div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none"
-                  style={{
-                    background: "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.2) 45%, transparent 50%)",
-                    transform: "translateX(-100%)"
-                  }}
-                  animate={{
-                    x: ["100%", "-100%"]
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                />
               </motion.div>
             </motion.div>
           ))}

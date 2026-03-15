@@ -392,15 +392,8 @@ export const AboutSection = () => {
   };
 
   return (
-    <section className="w-full min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white pt-24 pb-32 relative overflow-hidden">
-      {/* Animated Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: "url('https://www.transparenttextures.com/patterns/coffee-beans.png')",
-          backgroundRepeat: "repeat",
-          backgroundSize: "200px"
-        }} />
-      </div>
+    <section className="w-full min-h-screen bg-gradient-to-b from-gray-900 to-gray-900 text-white pt-24 pb-32 relative overflow-hidden">
+
 
       {/* Floating Elements */}
       {[...Array(12)].map((_, i) => (
@@ -478,7 +471,7 @@ export const AboutSection = () => {
               }}
               animate={floatingAnimation}
             >
-              LD Coffee
+              Luxery Coffee
             </motion.h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Crafting Rwanda's Finest Coffee Since 2010
@@ -496,11 +489,7 @@ export const AboutSection = () => {
           <motion.h2
             className="text-4xl md:text-5xl font-bold mb-4"
             variants={itemVariants}
-            style={{
-              background: "linear-gradient(135deg, #fbbf24, #f97316)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent"
-            }}
+
           >
             Our Story
           </motion.h2>
@@ -978,7 +967,7 @@ export const AboutSection = () => {
                 <div className="flex items-center gap-4 mb-4">
                   <img
                     src={testimonial.image}
-                    alt={testimonial.name}
+                    alt=''
                     className="w-16 h-16 rounded-full object-cover border-2 border-orange-500"
                   />
                   <div>

@@ -971,46 +971,7 @@ export const Gallery = () => {
   };
 
   return (
-    <section className="w-full py-20 bg-gradient-to-b from-gray-900 to-black min-h-screen relative overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 opacity-5">
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "url('https://www.transparenttextures.com/patterns/coffee-beans.png')",
-            backgroundRepeat: "repeat",
-            backgroundSize: "100px"
-          }}
-        />
-      </div>
-
-      {/* Floating coffee beans */}
-      {[...Array(6)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute text-orange-500/10"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            fontSize: `${30 + Math.random() * 50}px`,
-            rotate: `${Math.random() * 360}deg`
-          }}
-          animate={{
-            y: [0, -30, 0],
-            x: [0, Math.random() * 20 - 10, 0],
-            rotate: [0, 360],
-            opacity: [0.1, 0.2, 0.1]
-          }}
-          transition={{
-            duration: 15 + Math.random() * 10,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          🫘
-        </motion.div>
-      ))}
-
+    <section className="w-full py-20 bg-gradient-to-b from-gray-900 to-gray-900 min-h-screen relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <motion.div
@@ -1044,43 +1005,6 @@ export const Gallery = () => {
             variants={titleVariants}
           />
         </motion.div>
-
-        {/* Controls */}
-        <div className="flex flex-wrap justify-between items-center gap-4 mb-8">
-          {/* Left Controls */}
-          <div className="flex gap-2">
-            <motion.button
-              className="p-2 bg-gray-800 rounded-lg text-white hover:bg-orange-500 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setViewMode(viewMode === "grid" ? "carousel" : "grid")}
-              title={viewMode === "grid" ? "Switch to Carousel" : "Switch to Grid"}
-            >
-              {viewMode === "grid" ? <ViewCarousel /> : <GridOn />}
-            </motion.button>
-            
-            <motion.button
-              className="p-2 bg-gray-800 rounded-lg text-white hover:bg-orange-500 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={toggleFullscreen}
-            >
-              {isFullscreen ? <FullscreenExit /> : <Fullscreen />}
-            </motion.button>
-          </div>
-
-          {/* Search - Category filter removed */}
-          <div className="relative flex-1 max-w-md">
-            <input
-              type="text"
-              placeholder="Search images..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-4 py-2 pl-10 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-orange-500"
-            />
-            <ImageSearch className="absolute left-3 top-2.5 text-gray-400 !text-lg" />
-          </div>
-        </div>
 
         {/* Gallery Grid/Carousel */}
         <div className="relative">

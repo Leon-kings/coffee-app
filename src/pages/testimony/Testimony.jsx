@@ -368,19 +368,7 @@ export const Testimony = () => {
   };
 
   return (
-    <section id="customer" className="w-full py-20 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 opacity-5">
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "url('https://www.transparenttextures.com/patterns/coffee-beans.png')",
-            backgroundRepeat: "repeat",
-            backgroundSize: "100px"
-          }}
-        />
-      </div>
-
+    <section className="w-full py-20 bg-gradient-to-b from-gray-900 to-gray-900 relative overflow-hidden">
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
