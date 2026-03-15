@@ -18,10 +18,7 @@ body {
   width: 100%;
 }
 
-h1,h2 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+
 
 .button {
   border-radius: 8px;
@@ -48,8 +45,8 @@ h1,h2 {
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #e0e5e9;
-    color: #1e4be1;
+    background-color: #606d6d;
+    color: #ffffff;
     cursor: pointer;
     transition: border-color 0.25s;
   }

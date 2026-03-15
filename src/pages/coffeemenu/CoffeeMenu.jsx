@@ -1,75 +1,2217 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
-const CoffeeMenu = () => {
+// /* eslint-disable no-unused-vars */
+// import React, { useState } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { Link } from "react-router-dom";
+// import {
+//   LocalCafe,
+//   Restaurant,
+//   BakeryDining,
+//   Icecream,
+//   BreakfastDining,
+//   LunchDining,
+//   DinnerDining,
+//   EmojiFoodBeverage,
+//   ShoppingCart,
+//   Add,
+//   Remove,
+//   Close,
+//   Favorite,
+//   FavoriteBorder,
+//   Star,
+//   AccessTime,
+//   LocalFireDepartment,
+//   Grass,
+//   Egg as EggIcon,
+//   Cookie,
+//   Cake,
+//   WineBar
+// } from "@mui/icons-material";
+
+// // Menu categories
+// const categories = [
+//   { id: "all", name: "All Items", icon: <Restaurant /> },
+//   { id: "coffee", name: "Coffee Drinks", icon: <LocalCafe /> },
+//   { id: "tea", name: "Tea & More", icon: <EmojiFoodBeverage /> },
+//   { id: "pastries", name: "Pastries", icon: <BakeryDining /> },
+//   { id: "snacks", name: "Snacks", icon: <BreakfastDining /> },
+//   { id: "desserts", name: "Desserts", icon: <Icecream /> },
+//   { id: "savory", name: "Savory Bites", icon: <LunchDining /> }
+// ];
+
+// // Coffee Menu Items
+// export const menuItems = [
+//   // Coffee Drinks
+//   {
+//     id: 1,
+//     name: "Espresso Romano",
+//     description: "Rich espresso shot with a twist of lemon peel",
+//     price: 3.99,
+//     category: "coffee",
+//     image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600",
+//     calories: 10,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: true,
+//     glutenFree: true
+//   },
+//   {
+//     id: 2,
+//     name: "Caramel Macchiato",
+//     description: "Freshly steamed milk with vanilla and caramel drizzle",
+//     price: 5.49,
+//     category: "coffee",
+//     image: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=600",
+//     calories: 250,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: true
+//   },
+//   {
+//     id: 3,
+//     name: "Hazelnut Cappuccino",
+//     description: "Perfect balance of espresso, milk foam, and hazelnut",
+//     price: 5.29,
+//     category: "coffee",
+//     image: "https://images.unsplash.com/photo-1534778101976-62847782c213?w=600",
+//     calories: 180,
+//     popular: false,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: true
+//   },
+//   {
+//     id: 4,
+//     name: "Mocha Deluxe",
+//     description: "Rich chocolate and espresso with whipped cream",
+//     price: 5.99,
+//     category: "coffee",
+//     image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600",
+//     calories: 320,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: true
+//   },
+//   {
+//     id: 5,
+//     name: "Cold Brew Black",
+//     description: "Smooth, cold-brewed coffee served over ice",
+//     price: 4.49,
+//     category: "coffee",
+//     image: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=600",
+//     calories: 5,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: true,
+//     glutenFree: true
+//   },
+//   {
+//     id: 6,
+//     name: "French Vanilla Latte",
+//     description: "Smooth espresso with creamy vanilla and steamed milk",
+//     price: 5.29,
+//     category: "coffee",
+//     image: "https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?w=600",
+//     calories: 220,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: true
+//   },
+//   {
+//     id: 7,
+//     name: "Irish Cream Coffee",
+//     description: "Premium coffee with Irish cream flavor",
+//     price: 5.79,
+//     category: "coffee",
+//     image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600",
+//     calories: 280,
+//     popular: false,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: true
+//   },
+//   {
+//     id: 8,
+//     name: "Affogato",
+//     description: "Vanilla gelato topped with a shot of hot espresso",
+//     price: 6.99,
+//     category: "coffee",
+//     image: "https://images.unsplash.com/photo-1579992357154-faf4bde95b3d?w=600",
+//     calories: 350,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: true
+//   },
+//   {
+//     id: 9,
+//     name: "Nitro Cold Brew",
+//     description: "Smooth cold brew infused with nitrogen, creamy texture",
+//     price: 5.99,
+//     category: "coffee",
+//     image: "https://images.unsplash.com/photo-1591033594798-33227a05780d?w=600",
+//     calories: 5,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: true,
+//     glutenFree: true
+//   },
+//   {
+//     id: 10,
+//     name: "Turkish Coffee",
+//     description: "Finely ground coffee brewed in traditional cezve",
+//     price: 5.49,
+//     category: "coffee",
+//     image: "https://images.unsplash.com/photo-1587080266036-3494f4f66a7f?w=600",
+//     calories: 15,
+//     popular: false,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: true,
+//     glutenFree: true
+//   },
+
+//   // Tea & Other Drinks
+//   {
+//     id: 11,
+//     name: "Matcha Latte",
+//     description: "Ceremonial grade matcha with steamed milk",
+//     price: 5.99,
+//     category: "tea",
+//     image: "https://images.unsplash.com/photo-1536256263959-770afe4bf1c1?w=600",
+//     calories: 190,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: true
+//   },
+//   {
+//     id: 12,
+//     name: "Chai Tea Latte",
+//     description: "Spiced black tea with steamed milk and honey",
+//     price: 5.49,
+//     category: "tea",
+//     image: "https://images.unsplash.com/photo-1571934811356-5a5ee9b1d1f0?w=600",
+//     calories: 210,
+//     popular: true,
+//     spicy: true,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: true
+//   },
+//   {
+//     id: 13,
+//     name: "Hot Chocolate",
+//     description: "Rich, creamy hot chocolate with whipped cream",
+//     price: 4.99,
+//     category: "tea",
+//     image: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=600",
+//     calories: 320,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: true
+//   },
+
+//   // Pastries
+//   {
+//     id: 14,
+//     name: "Butter Croissant",
+//     description: "Flaky, buttery French croissant, baked fresh daily",
+//     price: 3.49,
+//     category: "pastries",
+//     image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600",
+//     calories: 280,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: false
+//   },
+//   {
+//     id: 15,
+//     name: "Chocolate Danish",
+//     description: "Buttery pastry filled with rich chocolate",
+//     price: 3.99,
+//     category: "pastries",
+//     image: "https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600",
+//     calories: 350,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: false
+//   },
+//   {
+//     id: 16,
+//     name: "Cinnamon Roll",
+//     description: "Soft, swirled roll with cinnamon and cream cheese frosting",
+//     price: 4.29,
+//     category: "pastries",
+//     image: "https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600",
+//     calories: 420,
+//     popular: true,
+//     spicy: true,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: false
+//   },
+//   {
+//     id: 17,
+//     name: "Blueberry Muffin",
+//     description: "Moist muffin bursting with fresh blueberries",
+//     price: 3.29,
+//     category: "pastries",
+//     image: "https://images.unsplash.com/photo-1557958114-3d2440200f0b?w=600",
+//     calories: 290,
+//     popular: false,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: false
+//   },
+//   {
+//     id: 18,
+//     name: "Almond Croissant",
+//     description: "Buttery croissant filled with almond cream and sliced almonds",
+//     price: 4.49,
+//     category: "pastries",
+//     image: "https://images.unsplash.com/photo-1623334044303-241021148842?w=600",
+//     calories: 390,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: false
+//   },
+
+//   // Snacks
+//   {
+//     id: 19,
+//     name: "Avocado Toast",
+//     description: "Sourdough toast with smashed avocado, chili flakes",
+//     price: 6.99,
+//     category: "snacks",
+//     image: "https://images.unsplash.com/photo-1603046891744-1f76eb10b0b2?w=600",
+//     calories: 320,
+//     popular: true,
+//     spicy: true,
+//     vegetarian: true,
+//     vegan: true,
+//     glutenFree: false
+//   },
+//   {
+//     id: 20,
+//     name: "Granola & Yogurt",
+//     description: "Greek yogurt with house-made granola and fresh berries",
+//     price: 5.99,
+//     category: "snacks",
+//     image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600",
+//     calories: 280,
+//     popular: false,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: true
+//   },
+//   {
+//     id: 21,
+//     name: "Fruit & Cheese Plate",
+//     description: "Seasonal fruits, artisanal cheeses, and honey",
+//     price: 8.99,
+//     category: "snacks",
+//     image: "https://images.unsplash.com/photo-1532029837206-abbe2b7620e3?w=600",
+//     calories: 350,
+//     popular: false,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: true
+//   },
+//   {
+//     id: 22,
+//     name: "Hummus & Pita",
+//     description: "Creamy hummus with warm pita bread and veggies",
+//     price: 5.49,
+//     category: "snacks",
+//     image: "https://images.unsplash.com/photo-1577805945779-2b938bb0b7a6?w=600",
+//     calories: 290,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: true,
+//     glutenFree: false
+//   },
+
+//   // Desserts
+//   {
+//     id: 23,
+//     name: "Tiramisu",
+//     description: "Classic Italian dessert with coffee-soaked ladyfingers",
+//     price: 6.99,
+//     category: "desserts",
+//     image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600",
+//     calories: 450,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: false
+//   },
+//   {
+//     id: 24,
+//     name: "Chocolate Lava Cake",
+//     description: "Warm chocolate cake with molten center, vanilla ice cream",
+//     price: 7.49,
+//     category: "desserts",
+//     image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600",
+//     calories: 520,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: false
+//   },
+//   {
+//     id: 25,
+//     name: "Cheesecake",
+//     description: "New York style cheesecake with berry compote",
+//     price: 6.49,
+//     category: "desserts",
+//     image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=600",
+//     calories: 480,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: false
+//   },
+//   {
+//     id: 26,
+//     name: "Baklava",
+//     description: "Layers of phyllo with nuts and honey syrup",
+//     price: 4.99,
+//     category: "desserts",
+//     image: "https://images.unsplash.com/photo-1602357280108-589a05c4f2c6?w=600",
+//     calories: 380,
+//     popular: false,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: true,
+//     glutenFree: false
+//   },
+
+//   // Savory Bites
+//   {
+//     id: 27,
+//     name: "Breakfast Sandwich",
+//     description: "Egg, cheese, and bacon on a fresh croissant",
+//     price: 7.99,
+//     category: "savory",
+//     image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600",
+//     calories: 520,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: false,
+//     vegan: false,
+//     glutenFree: false
+//   },
+//   {
+//     id: 28,
+//     name: "Quiche Lorraine",
+//     description: "Savory egg tart with bacon and cheese",
+//     price: 6.49,
+//     category: "savory",
+//     image: "https://images.unsplash.com/photo-1627308595176-39951538c591?w=600",
+//     calories: 380,
+//     popular: false,
+//     spicy: false,
+//     vegetarian: false,
+//     vegan: false,
+//     glutenFree: false
+//   },
+//   {
+//     id: 29,
+//     name: "Spinach & Feta Pie",
+//     description: "Flaky pastry filled with spinach and feta cheese",
+//     price: 5.99,
+//     category: "savory",
+//     image: "https://images.unsplash.com/photo-1627308595176-39951538c591?w=600",
+//     calories: 340,
+//     popular: true,
+//     spicy: false,
+//     vegetarian: true,
+//     vegan: false,
+//     glutenFree: false
+//   }
+// ];
+
+// export const CoffeeMenu = () => {
+//   const [activeCategory, setActiveCategory] = useState("all");
+//   const [cart, setCart] = useState([]);
+//   const [showCart, setShowCart] = useState(false);
+//   const [favorites, setFavorites] = useState({});
+//   const [quantities, setQuantities] = useState({});
+//   const [selectedItem, setSelectedItem] = useState(null);
+//   const [filterPopular, setFilterPopular] = useState(false);
+//   const [filterSpicy, setFilterSpicy] = useState(false);
+//   const [filterVegan, setFilterVegan] = useState(false);
+//   const [filterGlutenFree, setFilterGlutenFree] = useState(false);
+
+//   // Initialize quantities
+//   React.useEffect(() => {
+//     const initialQuantities = {};
+//     menuItems.forEach(item => {
+//       initialQuantities[item.id] = 1;
+//     });
+//     setQuantities(initialQuantities);
+//   }, []);
+
+//   // Filter items based on category and filters
+//   const filteredItems = menuItems.filter(item => {
+//     // Category filter
+//     if (activeCategory !== "all" && item.category !== activeCategory) {
+//       return false;
+//     }
+    
+//     // Popular filter
+//     if (filterPopular && !item.popular) {
+//       return false;
+//     }
+    
+//     // Spicy filter
+//     if (filterSpicy && !item.spicy) {
+//       return false;
+//     }
+    
+//     // Vegan filter
+//     if (filterVegan && !item.vegan) {
+//       return false;
+//     }
+    
+//     // Gluten free filter
+//     if (filterGlutenFree && !item.glutenFree) {
+//       return false;
+//     }
+    
+//     return true;
+//   });
+
+//   // Group items by category for display
+//   const itemsByCategory = {};
+//   filteredItems.forEach(item => {
+//     if (!itemsByCategory[item.category]) {
+//       itemsByCategory[item.category] = [];
+//     }
+//     itemsByCategory[item.category].push(item);
+//   });
+
+//   const toggleFavorite = (id, e) => {
+//     e.stopPropagation();
+//     setFavorites(prev => ({
+//       ...prev,
+//       [id]: !prev[id]
+//     }));
+//   };
+
+//   const addToCart = (item) => {
+//     const quantity = quantities[item.id] || 1;
+//     const existingItem = cart.find(cartItem => cartItem.id === item.id);
+    
+//     if (existingItem) {
+//       setCart(cart.map(cartItem => 
+//         cartItem.id === item.id 
+//           ? { ...cartItem, quantity: cartItem.quantity + quantity }
+//           : cartItem
+//       ));
+//     } else {
+//       setCart([...cart, { ...item, quantity }]);
+//     }
+    
+//     // Show cart notification
+//     setShowCart(true);
+//     setTimeout(() => setShowCart(false), 3000);
+//   };
+
+//   const updateQuantity = (itemId, newQuantity) => {
+//     if (newQuantity < 1) return;
+//     setQuantities(prev => ({
+//       ...prev,
+//       [itemId]: newQuantity
+//     }));
+//   };
+
+//   const calculateTotal = () => {
+//     return cart.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2);
+//   };
+
+//   const removeFromCart = (itemId) => {
+//     setCart(cart.filter(item => item.id !== itemId));
+//   };
+
+//   // Animation variants
+//   const containerVariants = {
+//     hidden: { opacity: 0 },
+//     visible: {
+//       opacity: 1,
+//       transition: {
+//         staggerChildren: 0.05
+//       }
+//     }
+//   };
+
+//   const itemVariants = {
+//     hidden: { y: 20, opacity: 0 },
+//     visible: {
+//       y: 0,
+//       opacity: 1,
+//       transition: {
+//         type: "spring",
+//         stiffness: 100,
+//         damping: 15
+//       }
+//     }
+//   };
+
+//   const categoryVariants = {
+//     hidden: { opacity: 0, x: -20 },
+//     visible: {
+//       opacity: 1,
+//       x: 0,
+//       transition: {
+//         type: "spring",
+//         stiffness: 200,
+//         damping: 20
+//       }
+//     }
+//   };
+
+//   return (
+//     <>
+//       {/* Hero Section */}
+//       <section className="w-full pt-32 pb-20 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+//         {/* Animated Background */}
+//         <div className="absolute inset-0 opacity-10">
+//           <div 
+//             className="absolute inset-0"
+//             style={{
+//               backgroundImage: "url('https://www.transparenttextures.com/patterns/coffee-beans.png')",
+//               backgroundRepeat: "repeat",
+//               backgroundSize: "100px"
+//             }}
+//           />
+//         </div>
+
+//         {/* Floating coffee beans */}
+//         {[...Array(8)].map((_, i) => (
+//           <motion.div
+//             key={i}
+//             className="absolute text-orange-500/20"
+//             style={{
+//               left: `${Math.random() * 100}%`,
+//               top: `${Math.random() * 100}%`,
+//               fontSize: `${40 + Math.random() * 60}px`,
+//               rotate: `${Math.random() * 360}deg`
+//             }}
+//             animate={{
+//               y: [0, -50, 0],
+//               x: [0, Math.random() * 30 - 15, 0],
+//               rotate: [0, 360],
+//               opacity: [0.1, 0.3, 0.1]
+//             }}
+//             transition={{
+//               duration: 20 + Math.random() * 10,
+//               repeat: Infinity,
+//               ease: "linear"
+//             }}
+//           >
+//             🫘
+//           </motion.div>
+//         ))}
+
+//         <div className="container mx-auto px-4 relative z-10">
+//           <motion.div
+//             className="text-center max-w-4xl mx-auto"
+//             initial={{ opacity: 0, y: 30 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.8 }}
+//           >
+//             <motion.div
+//               className="inline-block mb-4"
+//               initial={{ scale: 0 }}
+//               animate={{ scale: 1 }}
+//               transition={{ delay: 0.3, type: "spring" }}
+//             >
+//               <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+//                 Our Menu
+//               </span>
+//             </motion.div>
+
+//             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+//               Coffee & Bites
+//             </h1>
+
+//             <motion.p
+//               className="text-xl text-gray-300 mb-8"
+//               initial={{ opacity: 0 }}
+//               animate={{ opacity: 1 }}
+//               transition={{ delay: 0.5 }}
+//             >
+//               Discover our handcrafted coffee drinks, fresh pastries, and delicious snacks
+//               made to perfectly complement your coffee experience.
+//             </motion.p>
+
+//             <motion.div
+//               className="flex flex-wrap justify-center gap-4"
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ delay: 0.7 }}
+//             >
+//               <Link to="/order">
+//                 <motion.button
+//                   className="bg-orange-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-600 transition-colors flex items-center gap-2"
+//                   whileHover={{ scale: 1.05 }}
+//                   whileTap={{ scale: 0.95 }}
+//                 >
+//                   <LocalCafe />
+//                   Order Now
+//                 </motion.button>
+//               </Link>
+              
+//               <motion.button
+//                 className="bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-700 transition-colors flex items-center gap-2"
+//                 whileHover={{ scale: 1.05 }}
+//                 whileTap={{ scale: 0.95 }}
+//                 onClick={() => {
+//                   document.getElementById('menu-items').scrollIntoView({ behavior: 'smooth' });
+//                 }}
+//               >
+//                 View Menu
+//                 <svg className="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7-7-7m14-6l-7 7-7-7" />
+//                 </svg>
+//               </motion.button>
+//             </motion.div>
+//           </motion.div>
+//         </div>
+//       </section>
+
+//       {/* Cart Notification */}
+//       <AnimatePresence>
+//         {showCart && (
+//           <motion.div
+//             className="fixed top-24 right-4 z-50 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg flex items-center gap-2"
+//             initial={{ opacity: 0, x: 50 }}
+//             animate={{ opacity: 1, x: 0 }}
+//             exit={{ opacity: 0, x: 50 }}
+//           >
+//             <span>✅ Added to cart!</span>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+
+//       {/* Cart Button */}
+//       <motion.button
+//         className="fixed bottom-4 right-4 z-40 bg-orange-500 text-white p-4 rounded-full shadow-lg hover:bg-orange-600 transition-colors"
+//         whileHover={{ scale: 1.1 }}
+//         whileTap={{ scale: 0.9 }}
+//         onClick={() => setShowCart(!showCart)}
+//       >
+//         <ShoppingCart />
+//         {cart.length > 0 && (
+//           <motion.span
+//             className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-6 h-6 rounded-full flex items-center justify-center"
+//             initial={{ scale: 0 }}
+//             animate={{ scale: 1 }}
+//           >
+//             {cart.reduce((sum, item) => sum + item.quantity, 0)}
+//           </motion.span>
+//         )}
+//       </motion.button>
+
+//       {/* Cart Modal */}
+//       <AnimatePresence>
+//         {showCart && cart.length > 0 && (
+//           <motion.div
+//             className="fixed bottom-20 right-4 z-40 bg-gray-800 rounded-lg shadow-xl w-80 border border-gray-700"
+//             initial={{ opacity: 0, scale: 0.8, y: 20 }}
+//             animate={{ opacity: 1, scale: 1, y: 0 }}
+//             exit={{ opacity: 0, scale: 0.8, y: 20 }}
+//           >
+//             <div className="p-4 border-b border-gray-700 flex justify-between items-center">
+//               <h3 className="text-white font-bold">Your Cart</h3>
+//               <button
+//                 className="text-gray-400 hover:text-white"
+//                 onClick={() => setShowCart(false)}
+//               >
+//                 <Close />
+//               </button>
+//             </div>
+//             <div className="p-4 max-h-96 overflow-y-auto">
+//               {cart.map(item => (
+//                 <div key={item.id} className="flex gap-2 mb-3 pb-2 border-b border-gray-700">
+//                   <img src={item.image} alt={item.name} className="w-12 h-12 object-cover rounded" />
+//                   <div className="flex-1">
+//                     <h4 className="text-white text-sm font-semibold">{item.name}</h4>
+//                     <p className="text-orange-400 text-sm">${item.price} x {item.quantity}</p>
+//                   </div>
+//                   <button
+//                     className="text-red-400 hover:text-red-300"
+//                     onClick={() => removeFromCart(item.id)}
+//                   >
+//                     ×
+//                   </button>
+//                 </div>
+//               ))}
+//             </div>
+//             <div className="p-4 border-t border-gray-700">
+//               <div className="flex justify-between text-white mb-2">
+//                 <span>Total:</span>
+//                 <span className="font-bold">${calculateTotal()}</span>
+//               </div>
+//               <Link to="/checkout">
+//                 <button className="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600">
+//                   Checkout
+//                 </button>
+//               </Link>
+//             </div>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+
+//       {/* Menu Section */}
+//       <section id="menu-items" className="w-full py-20 bg-gray-900">
+//         <div className="container mx-auto px-4">
+//           {/* Category Navigation */}
+//           <motion.div
+//             className="flex flex-wrap justify-center gap-2 mb-8"
+//             variants={containerVariants}
+//             initial="hidden"
+//             whileInView="visible"
+//             viewport={{ once: true }}
+//           >
+//             {categories.map((category) => (
+//               <motion.button
+//                 key={category.id}
+//                 variants={categoryVariants}
+//                 className={`px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 transition-all ${
+//                   activeCategory === category.id
+//                     ? 'bg-orange-500 text-white'
+//                     : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+//                 }`}
+//                 whileHover={{ scale: 1.05 }}
+//                 whileTap={{ scale: 0.95 }}
+//                 onClick={() => setActiveCategory(category.id)}
+//               >
+//                 <span className="text-lg">{category.icon}</span>
+//                 {category.name}
+//               </motion.button>
+//             ))}
+//           </motion.div>
+
+//           {/* Filter Bar */}
+//           <motion.div
+//             className="flex flex-wrap justify-center gap-4 mb-12 p-4 bg-gray-800/50 rounded-lg"
+//             initial={{ opacity: 0, y: 20 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             viewport={{ once: true }}
+//           >
+//             <button
+//               className={`px-3 py-1 rounded-full text-sm flex items-center gap-1 ${
+//                 filterPopular ? 'bg-orange-500 text-white' : 'bg-gray-700 text-gray-300'
+//               }`}
+//               onClick={() => setFilterPopular(!filterPopular)}
+//             >
+//               <Star fontSize="small" /> Popular
+//             </button>
+//             <button
+//               className={`px-3 py-1 rounded-full text-sm flex items-center gap-1 ${
+//                 filterSpicy ? 'bg-orange-500 text-white' : 'bg-gray-700 text-gray-300'
+//               }`}
+//               onClick={() => setFilterSpicy(!filterSpicy)}
+//             >
+//               <LocalFireDepartment fontSize="small" /> Spicy
+//             </button>
+//             <button
+//               className={`px-3 py-1 rounded-full text-sm flex items-center gap-1 ${
+//                 filterVegan ? 'bg-orange-500 text-white' : 'bg-gray-700 text-gray-300'
+//               }`}
+//               onClick={() => setFilterVegan(!filterVegan)}
+//             >
+//               <Grass fontSize="small" /> Vegan
+//             </button>
+//             <button
+//               className={`px-3 py-1 rounded-full text-sm flex items-center gap-1 ${
+//                 filterGlutenFree ? 'bg-orange-500 text-white' : 'bg-gray-700 text-gray-300'
+//               }`}
+//               onClick={() => setFilterGlutenFree(!filterGlutenFree)}
+//             >
+//               <WineBar fontSize="small" /> Gluten Free
+//             </button>
+//           </motion.div>
+
+//           {/* Menu Items by Category */}
+//           {Object.entries(itemsByCategory).map(([category, items]) => (
+//             <div key={category} className="mb-12">
+//               <motion.h2
+//                 className="text-2xl font-bold text-white mb-6 capitalize flex items-center gap-2"
+//                 initial={{ opacity: 0, x: -20 }}
+//                 whileInView={{ opacity: 1, x: 0 }}
+//                 viewport={{ once: true }}
+//               >
+//                 {categories.find(c => c.id === category)?.icon}
+//                 {category}
+//               </motion.h2>
+
+//               <motion.div
+//                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+//                 variants={containerVariants}
+//                 initial="hidden"
+//                 whileInView="visible"
+//                 viewport={{ once: true }}
+//               >
+//                 {items.map((item) => (
+//                   <motion.div
+//                     key={item.id}
+//                     variants={itemVariants}
+//                     className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-orange-500 transition-all group cursor-pointer"
+//                     onClick={() => setSelectedItem(item)}
+//                   >
+//                     <div className="relative h-48 overflow-hidden">
+//                       <img
+//                         src={item.image}
+//                         alt={item.name}
+//                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+//                       />
+                      
+//                       {/* Popular Badge */}
+//                       {item.popular && (
+//                         <div className="absolute top-2 left-2 bg-orange-500 text-white px-2 py-1 rounded-full text-xs flex items-center gap-1">
+//                           <Star fontSize="small" /> Popular
+//                         </div>
+//                       )}
+
+//                       {/* Dietary Icons */}
+//                       <div className="absolute top-2 right-2 flex gap-1">
+//                         {item.vegan && (
+//                           <span className="bg-green-500 text-white p-1 rounded-full text-xs" title="Vegan">
+//                             <Grass fontSize="small" />
+//                           </span>
+//                         )}
+//                         {item.spicy && (
+//                           <span className="bg-red-500 text-white p-1 rounded-full text-xs" title="Spicy">
+//                             <LocalFireDepartment fontSize="small" />
+//                           </span>
+//                         )}
+//                         {item.glutenFree && (
+//                           <span className="bg-blue-500 text-white p-1 rounded-full text-xs" title="Gluten Free">
+//                             <WineBar fontSize="small" />
+//                           </span>
+//                         )}
+//                       </div>
+
+//                       {/* Favorite Button */}
+//                       <button
+//                         className="absolute top-2 right-12 text-white p-1 rounded-full bg-black/50 hover:bg-orange-500 transition-colors"
+//                         onClick={(e) => toggleFavorite(item.id, e)}
+//                       >
+//                         {favorites[item.id] ? (
+//                           <Favorite className="text-red-500" />
+//                         ) : (
+//                           <FavoriteBorder />
+//                         )}
+//                       </button>
+//                     </div>
+
+//                     <div className="p-4">
+//                       <div className="flex justify-between items-start mb-2">
+//                         <h3 className="text-lg font-bold text-white">{item.name}</h3>
+//                         <span className="text-orange-400 font-bold">${item.price}</span>
+//                       </div>
+                      
+//                       <p className="text-gray-400 text-sm mb-3 line-clamp-2">
+//                         {item.description}
+//                       </p>
+
+//                       <div className="flex items-center justify-between">
+//                         <div className="flex items-center gap-2">
+//                           <span className="text-xs text-gray-500">
+//                             <AccessTime fontSize="small" className="inline mr-1" />
+//                             5-10 min
+//                           </span>
+//                           <span className="text-xs text-gray-500">
+//                             <LocalFireDepartment fontSize="small" className="inline mr-1" />
+//                             {item.calories} cal
+//                           </span>
+//                         </div>
+
+//                         <div className="flex items-center gap-2">
+//                           <button
+//                             className="w-6 h-6 bg-gray-700 rounded-full flex items-center justify-center text-white hover:bg-orange-500 transition-colors"
+//                             onClick={(e) => {
+//                               e.stopPropagation();
+//                               updateQuantity(item.id, (quantities[item.id] || 1) - 1);
+//                             }}
+//                           >
+//                             -
+//                           </button>
+//                           <span className="text-white text-sm w-6 text-center">
+//                             {quantities[item.id] || 1}
+//                           </span>
+//                           <button
+//                             className="w-6 h-6 bg-gray-700 rounded-full flex items-center justify-center text-white hover:bg-orange-500 transition-colors"
+//                             onClick={(e) => {
+//                               e.stopPropagation();
+//                               updateQuantity(item.id, (quantities[item.id] || 1) + 1);
+//                             }}
+//                           >
+//                             +
+//                           </button>
+//                         </div>
+//                       </div>
+
+//                       <button
+//                         className="w-full mt-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white py-2 rounded-lg font-semibold text-sm flex items-center justify-center gap-2 hover:from-orange-600 hover:to-amber-600 transition-all"
+//                         onClick={(e) => {
+//                           e.stopPropagation();
+//                           addToCart(item);
+//                         }}
+//                       >
+//                         <ShoppingCart fontSize="small" />
+//                         Add to Order
+//                       </button>
+//                     </div>
+//                   </motion.div>
+//                 ))}
+//               </motion.div>
+//             </div>
+//           ))}
+
+//           {filteredItems.length === 0 && (
+//             <motion.div
+//               className="text-center py-12"
+//               initial={{ opacity: 0 }}
+//               animate={{ opacity: 1 }}
+//             >
+//               <p className="text-gray-400 text-lg">No items match your filters</p>
+//             </motion.div>
+//           )}
+//         </div>
+//       </section>
+
+//       {/* Item Detail Modal */}
+//       <AnimatePresence>
+//         {selectedItem && (
+//           <motion.div
+//             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+//             initial={{ opacity: 0 }}
+//             animate={{ opacity: 1 }}
+//             exit={{ opacity: 0 }}
+//             onClick={() => setSelectedItem(null)}
+//           >
+//             <motion.div
+//               className="bg-gray-800 rounded-xl max-w-2xl w-full overflow-hidden border border-gray-700"
+//               initial={{ scale: 0.8, y: 50 }}
+//               animate={{ scale: 1, y: 0 }}
+//               exit={{ scale: 0.8, y: 50 }}
+//               onClick={(e) => e.stopPropagation()}
+//             >
+//               <img
+//                 src={selectedItem.image}
+//                 alt={selectedItem.name}
+//                 className="w-full h-64 object-cover"
+//               />
+              
+//               <div className="p-6">
+//                 <div className="flex justify-between items-start mb-4">
+//                   <div>
+//                     <h2 className="text-2xl font-bold text-white mb-2">
+//                       {selectedItem.name}
+//                     </h2>
+//                     <p className="text-gray-300">
+//                       {selectedItem.description}
+//                     </p>
+//                   </div>
+//                   <span className="text-2xl font-bold text-orange-400">
+//                     ${selectedItem.price}
+//                   </span>
+//                 </div>
+
+//                 <div className="flex gap-4 mb-4 text-sm text-gray-400">
+//                   <span>Calories: {selectedItem.calories}</span>
+//                   {selectedItem.vegan && <span>🌱 Vegan</span>}
+//                   {selectedItem.spicy && <span>🌶️ Spicy</span>}
+//                   {selectedItem.glutenFree && <span>🌾 Gluten Free</span>}
+//                 </div>
+
+//                 <div className="flex items-center justify-between mb-4">
+//                   <div className="flex items-center gap-3">
+//                     <button
+//                       className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center text-white hover:bg-orange-500"
+//                       onClick={() => updateQuantity(selectedItem.id, (quantities[selectedItem.id] || 1) - 1)}
+//                     >
+//                       -
+//                     </button>
+//                     <span className="text-white text-lg w-8 text-center">
+//                       {quantities[selectedItem.id] || 1}
+//                     </span>
+//                     <button
+//                       className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center text-white hover:bg-orange-500"
+//                       onClick={() => updateQuantity(selectedItem.id, (quantities[selectedItem.id] || 1) + 1)}
+//                     >
+//                       +
+//                     </button>
+//                   </div>
+
+//                   <button
+//                     className="bg-orange-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-orange-600 flex items-center gap-2"
+//                     onClick={() => {
+//                       addToCart(selectedItem);
+//                       setSelectedItem(null);
+//                     }}
+//                   >
+//                     <ShoppingCart />
+//                     Add to Cart
+//                   </button>
+//                 </div>
+
+//                 <button
+//                   className="w-full bg-gray-700 text-white py-2 rounded-lg hover:bg-gray-600"
+//                   onClick={() => setSelectedItem(null)}
+//                 >
+//                   Close
+//                 </button>
+//               </div>
+//             </motion.div>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </>
+//   );
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* eslint-disable no-unused-vars */
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  LocalCafe,
+  BakeryDining,
+  Icecream,
+  BreakfastDining,
+  LunchDining,
+  Tapas,
+  Star,
+  AccessTime,
+  LocalFireDepartment,
+  Grass,
+  WineBar,
+  RestaurantMenu,
+  MenuBook,
+  FreeBreakfast,
+  DinnerDining,
+  EmojiFoodBeverage,
+  Coffee,
+  Egg as EggIcon,
+  Cookie,
+  Cake,
+  RamenDining,
+  SoupKitchen,
+  BrunchDining,
+  DinnerDining as SavoryIcon,
+  KebabDining,
+  SetMeal,
+  RiceBowl,
+  Fastfood
+} from "@mui/icons-material";
+
+// Menu categories with icons and descriptions
+const menuCategories = [
+  { 
+    id: "featured", 
+    name: "Chef's Specials", 
+    icon: <Star />, 
+    description: "Our most celebrated creations, crafted with passion",
+    color: "from-yellow-500 to-amber-500"
+  },
+  { 
+    id: "coffee", 
+    name: "Specialty Coffee", 
+    icon: <LocalCafe />, 
+    description: "Handcrafted espresso drinks from around the world",
+    color: "from-amber-700 to-amber-500"
+  },
+  { 
+    id: "tea", 
+    name: "Artisan Teas", 
+    icon: <FreeBreakfast />, 
+    description: "Premium loose leaf teas and herbal infusions",
+    color: "from-green-600 to-green-400"
+  },
+  { 
+    id: "pastries", 
+    name: "Fresh Pastries", 
+    icon: <BakeryDining />, 
+    description: "Baked fresh daily in our kitchen",
+    color: "from-orange-400 to-amber-300"
+  },
+  { 
+    id: "breakfast", 
+    name: "Breakfast", 
+    icon: <BreakfastDining />, 
+    description: "Start your day with our morning favorites",
+    color: "from-yellow-400 to-orange-400"
+  },
+  { 
+    id: "lunch", 
+    name: "Lunch & Savory", 
+    icon: <LunchDining />, 
+    description: "Hearty sandwiches, salads, and warm meals",
+    color: "from-red-500 to-orange-500"
+  },
+  { 
+    id: "desserts", 
+    name: "Desserts", 
+    icon: <Icecream />, 
+    description: "Sweet endings to your coffee experience",
+    color: "from-pink-400 to-purple-400"
+  },
+  { 
+    id: "snacks", 
+    name: "Small Bites", 
+    icon: <Tapas />, 
+    description: "Perfect accompaniments for your drink",
+    color: "from-blue-500 to-cyan-400"
+  }
+];
+
+// Complete Menu Items
+export const menuItems = [
+  // CHEF'S SPECIALS
+  {
+    id: 1,
+    name: "Signature House Blend",
+    description: "Our signature medium-roast coffee with notes of chocolate and caramel. Sourced from high-altitude farms in Ethiopia.",
+    price: 4.25,
+    category: "featured",
+    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600",
+    calories: 5,
+    popular: true,
+    chefRecommendation: true,
+    origin: "Ethiopia",
+    roast: "Medium",
+    notes: "Chocolate, Caramel, Citrus"
+  },
+  {
+    id: 2,
+    name: "Barista's Choice Latte",
+    description: "Espresso with steamed milk and the barista's daily special syrup. Ask your server for today's flavor.",
+    price: 5.75,
+    category: "featured",
+    image: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=600",
+    calories: 210,
+    popular: true,
+    chefRecommendation: true,
+    available: "Daily rotation"
+  },
+  {
+    id: 3,
+    name: "Affogato",
+    description: "Vanilla bean gelato 'drowned' with a shot of hot espresso. A perfect marriage of bitter and sweet.",
+    price: 6.99,
+    category: "featured",
+    image: "https://images.unsplash.com/photo-1579992357154-faf4bde95b3d?w=600",
+    calories: 350,
+    popular: true,
+    dessert: true
+  },
+
+  // COFFEE MENU
+  {
+    id: 4,
+    name: "Espresso Romano",
+    description: "Rich espresso shot with a twist of lemon peel - a Roman tradition that brightens the coffee's natural acidity.",
+    price: 3.99,
+    category: "coffee",
+    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600",
+    calories: 10,
+    sizes: ["Single", "Double"],
+    origin: "Ethiopia/Guatemala blend",
+    roast: "Dark"
+  },
+  {
+    id: 5,
+    name: "Caramel Macchiato",
+    description: "Freshly steamed milk with vanilla syrup, marked with espresso and finished with house-made caramel drizzle.",
+    price: 5.49,
+    category: "coffee",
+    image: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=600",
+    calories: 250,
+    sizes: ["Tall (12oz)", "Grande (16oz)", "Venti (20oz)"],
+    available: "Hot or Iced"
+  },
+  {
+    id: 6,
+    name: "Hazelnut Cappuccino",
+    description: "Perfect balance of espresso, steamed milk, and milk foam, with a touch of Italian hazelnut syrup.",
+    price: 5.29,
+    category: "coffee",
+    image: "https://images.unsplash.com/photo-1534778101976-62847782c213?w=600",
+    calories: 180,
+    sizes: ["Tall (12oz)", "Grande (16oz)"],
+    available: true
+  },
+  {
+    id: 7,
+    name: "Mocha Deluxe",
+    description: "Rich chocolate and espresso with whipped cream and chocolate drizzle. Made with single-origin chocolate.",
+    price: 5.99,
+    category: "coffee",
+    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600",
+    calories: 320,
+    sizes: ["Tall (12oz)", "Grande (16oz)", "Venti (20oz)"],
+    popular: true
+  },
+  {
+    id: 8,
+    name: "Cold Brew",
+    description: "Smooth, cold-brewed for 18 hours, served over ice. Less acidic than traditional iced coffee.",
+    price: 4.49,
+    category: "coffee",
+    image: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=600",
+    calories: 5,
+    sizes: ["Grande (16oz)", "Venti (20oz)"],
+    caffeine: "High"
+  },
+  {
+    id: 9,
+    name: "French Vanilla Latte",
+    description: "Smooth espresso with house-made vanilla syrup and steamed milk, topped with a light foam.",
+    price: 5.29,
+    category: "coffee",
+    image: "https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?w=600",
+    calories: 220,
+    sizes: ["Tall (12oz)", "Grande (16oz)", "Venti (20oz)"]
+  },
+  {
+    id: 10,
+    name: "Nitro Cold Brew",
+    description: "Smooth cold brew infused with nitrogen for a creamy, stout-like texture and natural sweetness.",
+    price: 5.99,
+    category: "coffee",
+    image: "https://images.unsplash.com/photo-1591033594798-33227a05780d?w=600",
+    calories: 5,
+    sizes: ["Grande (16oz)"],
+    nitrogenInfused: true
+  },
+  {
+    id: 11,
+    name: "Turkish Coffee",
+    description: "Finely ground coffee brewed in traditional cezve, served with a piece of Turkish delight.",
+    price: 5.49,
+    category: "coffee",
+    image: "https://images.unsplash.com/photo-1587080266036-3494f4f66a7f?w=600",
+    calories: 15,
+    origin: "Turkey",
+    preparation: "Traditional copper pot"
+  },
+  {
+    id: 12,
+    name: "Cortado",
+    description: "Equal parts espresso and steamed milk - a Spanish classic with a perfect 1:1 ratio.",
+    price: 4.79,
+    category: "coffee",
+    image: "https://images.unsplash.com/photo-1534778101976-62847782c213?w=600",
+    calories: 90,
+    sizes: ["Small (5oz)"],
+    origin: "Spain"
+  },
+  {
+    id: 13,
+    name: "Flat White",
+    description: "Double ristretto with microfoam milk. Smooth and strong with a velvety texture.",
+    price: 5.29,
+    category: "coffee",
+    image: "https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?w=600",
+    calories: 160,
+    sizes: ["Tall (12oz)", "Grande (16oz)"],
+    origin: "Australia/New Zealand"
+  },
+  {
+    id: 14,
+    name: "Irish Cream Coffee",
+    description: "Premium coffee with Irish cream flavor (non-alcoholic), topped with whipped cream.",
+    price: 5.79,
+    category: "coffee",
+    image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600",
+    calories: 280,
+    sizes: ["Grande (16oz)"]
+  },
+
+  // TEA MENU
+  {
+    id: 15,
+    name: "Matcha Latte",
+    description: "Ceremonial grade matcha from Uji, Japan, whisked with steamed milk. Vibrant green and antioxidant-rich.",
+    price: 5.99,
+    category: "tea",
+    image: "https://images.unsplash.com/photo-1536256263959-770afe4bf1c1?w=600",
+    calories: 190,
+    sizes: ["Tall (12oz)", "Grande (16oz)"],
+    origin: "Uji, Japan",
+    grade: "Ceremonial"
+  },
+  {
+    id: 16,
+    name: "Chai Tea Latte",
+    description: "Spiced black tea with steamed milk and honey. Made with traditional Indian masala chai spices.",
+    price: 5.49,
+    category: "tea",
+    image: "https://images.unsplash.com/photo-1571934811356-5a5ee9b1d1f0?w=600",
+    calories: 210,
+    sizes: ["Tall (12oz)", "Grande (16oz)", "Venti (20oz)"],
+    spices: "Cardamom, Cinnamon, Ginger, Clove"
+  },
+  {
+    id: 17,
+    name: "Earl Grey Supreme",
+    description: "Premium black tea with bergamot oil and cornflower petals. A classic London afternoon tea.",
+    price: 4.29,
+    category: "tea",
+    image: "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=600",
+    calories: 0,
+    sizes: ["Pot (serves 2)", "Cup"],
+    origin: "Sri Lanka"
+  },
+  {
+    id: 18,
+    name: "Moroccan Mint",
+    description: "Gunpowder green tea with fresh spearmint. Served in the traditional Moroccan style.",
+    price: 4.49,
+    category: "tea",
+    image: "https://images.unsplash.com/photo-1576092762791-dd2e2c8bf3d2?w=600",
+    calories: 0,
+    sizes: ["Pot (serves 2)", "Cup"],
+    origin: "Morocco"
+  },
+  {
+    id: 19,
+    name: "Chamomile Citrus",
+    description: "Caffeine-free herbal blend with chamomile, orange peel, and lemon verbena.",
+    price: 4.29,
+    category: "tea",
+    image: "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=600",
+    calories: 0,
+    sizes: ["Pot (serves 2)", "Cup"],
+    herbal: true
+  },
+  {
+    id: 20,
+    name: "Jasmine Dragon Pearls",
+    description: "Hand-rolled green tea scented with jasmine blossoms. Each pearl unfurls as it steeps.",
+    price: 5.49,
+    category: "tea",
+    image: "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=600",
+    calories: 0,
+    origin: "Fujian, China",
+    grade: "Premium"
+  },
+
+  // PASTRIES
+  {
+    id: 21,
+    name: "Butter Croissant",
+    description: "Flaky, buttery French croissant with 24 layers, baked fresh every morning.",
+    price: 3.49,
+    category: "pastries",
+    image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600",
+    calories: 280,
+    bakedFresh: true,
+    contains: "Butter, Flour, Yeast"
+  },
+  {
+    id: 22,
+    name: "Almond Croissant",
+    description: "Buttery croissant filled with almond cream, topped with sliced almonds and powdered sugar.",
+    price: 4.49,
+    category: "pastries",
+    image: "https://images.unsplash.com/photo-1623334044303-241021148842?w=600",
+    calories: 390,
+    popular: true,
+    contains: "Almonds, Butter"
+  },
+  {
+    id: 23,
+    name: "Chocolate Danish",
+    description: "Flaky pastry filled with rich Valrhona chocolate ganache and topped with pearl sugar.",
+    price: 3.99,
+    category: "pastries",
+    image: "https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600",
+    calories: 350,
+    chocolate: "Valrhona 64%"
+  },
+  {
+    id: 24,
+    name: "Cinnamon Roll",
+    description: "Soft, swirled roll with cinnamon sugar and cream cheese frosting. Baked fresh daily.",
+    price: 4.29,
+    category: "pastries",
+    image: "https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600",
+    calories: 420,
+    popular: true,
+    frosting: "Cream cheese"
+  },
+  {
+    id: 25,
+    name: "Blueberry Scone",
+    description: "Buttery scone loaded with fresh Maine blueberries, finished with a lemon glaze.",
+    price: 3.29,
+    category: "pastries",
+    image: "https://images.unsplash.com/photo-1557958114-3d2440200f0b?w=600",
+    calories: 290,
+    blueberries: "Fresh Maine"
+  },
+  {
+    id: 26,
+    name: "Morning Bun",
+    description: "Croissant dough with cinnamon sugar and orange zest, baked until caramelized.",
+    price: 3.79,
+    category: "pastries",
+    image: "https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=600",
+    calories: 320,
+    contains: "Orange, Cinnamon"
+  },
+  {
+    id: 27,
+    name: "Pain au Chocolat",
+    description: "French chocolate croissant with two sticks of dark chocolate wrapped in flaky pastry.",
+    price: 3.99,
+    category: "pastries",
+    image: "https://images.unsplash.com/photo-1623334044303-241021148842?w=600",
+    calories: 310,
+    chocolate: "Dark 70%"
+  },
+
+  // BREAKFAST
+  {
+    id: 28,
+    name: "Avocado Toast",
+    description: "Sourdough toast with smashed avocado, chili flakes, poached egg, and microgreens.",
+    price: 8.99,
+    category: "breakfast",
+    image: "https://images.unsplash.com/photo-1603046891744-1f76eb10b0b2?w=600",
+    calories: 420,
+    popular: true,
+    addOns: ["Bacon", "Smoked Salmon", "Feta"],
+    bread: "House-made sourdough"
+  },
+  {
+    id: 29,
+    name: "Breakfast Sandwich",
+    description: "Egg, aged cheddar, and bacon on a fresh croissant with house-made aioli.",
+    price: 7.99,
+    category: "breakfast",
+    image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600",
+    calories: 520,
+    popular: true,
+    egg: "Farm-fresh, cooked to order"
+  },
+  {
+    id: 30,
+    name: "Greek Yogurt Parfait",
+    description: "Creamy Greek yogurt with house-made honey granola and fresh seasonal berries.",
+    price: 5.99,
+    category: "breakfast",
+    image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600",
+    calories: 280,
+    vegetarian: true,
+    granola: "House-made with honey"
+  },
+  {
+    id: 31,
+    name: "Steel Cut Oatmeal",
+    description: "Creamy steel-cut oats with brown sugar, fresh berries, and toasted nuts.",
+    price: 4.99,
+    category: "breakfast",
+    image: "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?w=600",
+    calories: 210,
+    vegan: true,
+    toppings: "Berries, Nuts, Brown Sugar"
+  },
+  {
+    id: 32,
+    name: "Quiche Lorraine",
+    description: "Savory egg tart with bacon, Gruyère cheese, and caramelized onions in a butter crust.",
+    price: 6.49,
+    category: "breakfast",
+    image: "https://images.unsplash.com/photo-1627308595176-39951538c591?w=600",
+    calories: 380,
+    cheese: "Gruyère"
+  },
+  {
+    id: 33,
+    name: "Eggs Benedict",
+    description: "Poached eggs on English muffin with Canadian bacon and house-made hollandaise.",
+    price: 9.99,
+    category: "breakfast",
+    image: "https://images.unsplash.com/photo-1603046891744-1f76eb10b0b2?w=600",
+    calories: 550,
+    available: "Weekends only",
+    hollandaise: "House-made"
+  },
+
+  // LUNCH & SAVORY
+  {
+    id: 34,
+    name: "Turkey & Avocado Sandwich",
+    description: "Roasted turkey, avocado, lettuce, tomato, and garlic aioli on toasted ciabatta.",
+    price: 9.99,
+    category: "lunch",
+    image: "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=600",
+    calories: 550,
+    popular: true,
+    bread: "Ciabatta"
+  },
+  {
+    id: 35,
+    name: "Caprese Panini",
+    description: "Fresh mozzarella, tomato, basil, and balsamic glaze pressed on focaccia.",
+    price: 8.49,
+    category: "lunch",
+    image: "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=600",
+    calories: 480,
+    vegetarian: true,
+    cheese: "Fresh mozzarella"
+  },
+  {
+    id: 36,
+    name: "Spinach & Feta Pie",
+    description: "Flaky phyllo filled with spinach, feta, and dill. Served with Greek salad.",
+    price: 5.99,
+    category: "lunch",
+    image: "https://images.unsplash.com/photo-1627308595176-39951538c591?w=600",
+    calories: 340,
+    vegetarian: true,
+    origin: "Greek"
+  },
+  {
+    id: 37,
+    name: "Soup of the Day",
+    description: "Chef's daily creation using fresh, seasonal ingredients. Ask your server for today's selection.",
+    price: 5.49,
+    category: "lunch",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600",
+    calories: 180,
+    daily: true,
+    servedWith: "Artisan bread"
+  },
+  {
+    id: 38,
+    name: "Hummus & Pita Plate",
+    description: "Creamy house-made hummus with warm pita, olives, and fresh vegetables.",
+    price: 6.99,
+    category: "lunch",
+    image: "https://images.unsplash.com/photo-1577805945779-2b938bb0b7a6?w=600",
+    calories: 390,
+    vegan: true,
+    hummus: "House-made"
+  },
+  {
+    id: 39,
+    name: "Quinoa Power Bowl",
+    description: "Quinoa with roasted vegetables, avocado, chickpeas, and lemon-tahini dressing.",
+    price: 8.99,
+    category: "lunch",
+    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600",
+    calories: 430,
+    vegan: true,
+    glutenFree: true
+  },
+  {
+    id: 40,
+    name: "Grilled Cheese & Tomato Soup",
+    description: "Classic combination - artisan bread with three cheeses, served with tomato bisque.",
+    price: 7.99,
+    category: "lunch",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600",
+    calories: 620,
+    popular: true,
+    cheeses: "Cheddar, Gruyère, Mozzarella"
+  },
+
+  // DESSERTS
+  {
+    id: 41,
+    name: "Tiramisu",
+    description: "Classic Italian dessert with espresso-soaked ladyfingers and mascarpone cream.",
+    price: 6.99,
+    category: "desserts",
+    image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600",
+    calories: 450,
+    popular: true,
+    origin: "Italy"
+  },
+  {
+    id: 42,
+    name: "Chocolate Lava Cake",
+    description: "Warm Valrhona chocolate cake with molten center, served with vanilla bean ice cream.",
+    price: 7.49,
+    category: "desserts",
+    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600",
+    calories: 520,
+    popular: true,
+    chocolate: "Valrhona 70%"
+  },
+  {
+    id: 43,
+    name: "New York Cheesecake",
+    description: "Creamy, dense cheesecake with graham cracker crust and seasonal berry compote.",
+    price: 6.49,
+    category: "desserts",
+    image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=600",
+    calories: 480,
+    topping: "Berry compote"
+  },
+  {
+    id: 44,
+    name: "Baklava",
+    description: "Layers of phyllo with walnuts, pistachios, and honey syrup. Served with whipped cream.",
+    price: 4.99,
+    category: "desserts",
+    image: "https://images.unsplash.com/photo-1602357280108-589a05c4f2c6?w=600",
+    calories: 380,
+    origin: "Middle East",
+    nuts: "Walnuts, Pistachios"
+  },
+  {
+    id: 45,
+    name: "Flourless Chocolate Cake",
+    description: "Rich, dense chocolate cake made with Valrhona chocolate - naturally gluten-free.",
+    price: 5.99,
+    category: "desserts",
+    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600",
+    calories: 410,
+    glutenFree: true,
+    chocolate: "Valrhona 64%"
+  },
+  {
+    id: 46,
+    name: "Crème Brûlée",
+    description: "Rich vanilla bean custard with a caramelized sugar crust. Served with fresh berries.",
+    price: 5.99,
+    category: "desserts",
+    image: "https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=600",
+    calories: 380,
+    vanilla: "Madagascar vanilla bean"
+  },
+
+  // SNACKS & BITES
+  {
+    id: 47,
+    name: "Fruit & Cheese Plate",
+    description: "Seasonal fruits, artisanal cheeses, honey, and house-made crackers.",
+    price: 8.99,
+    category: "snacks",
+    image: "https://images.unsplash.com/photo-1532029837206-abbe2b7620e3?w=600",
+    calories: 350,
+    cheeses: "Brie, Aged Cheddar, Goat cheese",
+    sharable: true
+  },
+  {
+    id: 48,
+    name: "Mediterranean Plate",
+    description: "Olives, hummus, tzatziki, pita, and roasted red peppers.",
+    price: 7.49,
+    category: "snacks",
+    image: "https://images.unsplash.com/photo-1577805945779-2b938bb0b7a6?w=600",
+    calories: 290,
+    vegan: true,
+    sharable: true
+  },
+  {
+    id: 49,
+    name: "Truffle Fries",
+    description: "Crispy fries with truffle oil, parmesan, and fresh parsley. Served with garlic aioli.",
+    price: 5.99,
+    category: "snacks",
+    image: "https://images.unsplash.com/photo-1585109649138-04535e6d9f3e?w=600",
+    calories: 380,
+    popular: true,
+    sauce: "Garlic aioli"
+  },
+  {
+    id: 50,
+    name: "Loaded Nachos",
+    description: "Tortilla chips with cheese, jalapeños, black beans, salsa, and sour cream.",
+    price: 8.49,
+    category: "snacks",
+    image: "https://images.unsplash.com/photo-1513456852971-30c0b8199d4f?w=600",
+    calories: 620,
+    sharable: true,
+    vegetarian: true
+  }
+];
+
+export const CoffeeMenu = () => {
+  const [activeCategory, setActiveCategory] = useState("featured");
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  // Get items for active category
+  const categoryItems = menuItems.filter(item => item.category === activeCategory);
+
+  // Get category details
+  const currentCategory = menuCategories.find(cat => cat.id === activeCategory) || menuCategories[0];
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    }
+  };
+
   return (
-    <>
-      <div className="w-full pb-4 pt-4">
-        <div className="h2">New Features</div>
-        <motion.span
-          className="line block w-16 h-1 bg-orange-500 mx-auto mt-4 relative"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.span
-            className="box absolute w-2 h-2 bg-orange-500 rounded-full -top-1 -left-1"
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-          ></motion.span>
-        </motion.span>
-      </div>
-      <section
-        id="menu"
-        className="w-full pt-32 pb-32 dark:text-white bg-cover bg-center"
-      >
-        <div className="container mx-auto px-4">
-          <div className="row flex justify-center">
-            <div className="col-md-12 text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 0 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-4xl font-bold text-white mb-4">
-                  Roasted Coffee
-                </h2>
-                <motion.p
-                  className="text-lg text-gray-200 mb-6"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.5, duration: 0.8 }}
-                  viewport={{ once: true }}
-                >
-                  Rwanda Farmers Coffee Company and Gorilla’s Coffee products
-                  offer specialty-grade, 100% Arabica coffee sourced from
-                  Rwandan farmers’ cooperatives, grown in the highlands within
-                  the fertile volcanic soil by the shores of the painstaking
-                  Lake Kivu.
-                </motion.p>
-                <Link to={"/Product/234-345/list"}>
-                  <motion.button
-                    rel="nofollow"
-                    className="main-btn inline-block px-8 py-3 text-white font-semibold rounded-lg hover:bg-yellow-600 transition-colors duration-300"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ delay: 1, duration: 0.5 }}
-                    viewport={{ once: true }}
-                  >
-                    Purchase Now
-                  </motion.button>
-                </Link>
-              </motion.div>
-            </div>
-          </div>
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
+      {/* Hero Section - Menu Header */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div 
+            className="absolute inset-0"
+            style={{
+              backgroundImage: "url('https://www.transparenttextures.com/patterns/coffee-beans.png')",
+              backgroundRepeat: "repeat",
+              backgroundSize: "100px"
+            }}
+          />
+        </div>
+
+        {/* Floating Elements */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute text-orange-500/20"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              fontSize: `${40 + Math.random() * 60}px`,
+              rotate: `${Math.random() * 360}deg`
+            }}
+            animate={{
+              y: [0, -50, 0],
+              rotate: [0, 360],
+              opacity: [0.1, 0.3, 0.1]
+            }}
+            transition={{
+              duration: 20 + Math.random() * 10,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          >
+            ☕
+          </motion.div>
+        ))}
+
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            className="text-center max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.div
+              className="inline-block mb-4"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.3, type: "spring" }}
+            >
+              <span className="bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center gap-2">
+                <RestaurantMenu />
+                Our Menu
+              </span>
+            </motion.div>
+
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+                Coffee & Kitchen
+              </span>
+            </h1>
+
+            <motion.p
+              className="text-xl text-gray-300 mb-8 leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              Artisanal coffee • Fresh pastries • Breakfast & Lunch • House-made desserts
+            </motion.p>
+
+          </motion.div>
         </div>
       </section>
-    </>
+
+      {/* Menu Categories Navigation */}
+      <section id="menu-categories" className="py-8 bg-gray-800/50 backdrop-blur-sm sticky top-0 z-30">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="flex flex-wrap justify-center gap-2"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            {menuCategories.map((category) => (
+              <motion.button
+                key={category.id}
+                className={`px-4 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
+                  activeCategory === category.id
+                    ? `bg-gradient-to-r ${category.color} text-white shadow-lg scale-105`
+                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setActiveCategory(category.id)}
+              >
+                <span className="text-xl">{category.icon}</span>
+                <span className="hidden sm:inline">{category.name}</span>
+              </motion.button>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Category Header */}
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            key={activeCategory}
+          >
+            <div className={`inline-block p-4 rounded-full bg-gradient-to-r ${currentCategory.color} mb-4`}>
+              <span className="text-white text-4xl">{currentCategory.icon}</span>
+            </div>
+            <h2 className="text-3xl font-bold text-white mb-2">{currentCategory.name}</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">{currentCategory.description}</p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Menu Items Grid */}
+      <section className="pb-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            key={activeCategory}
+          >
+            {categoryItems.map((item) => (
+              <motion.div
+                key={item.id}
+                variants={itemVariants}
+                className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 hover:border-orange-500 transition-all group cursor-pointer"
+                onClick={() => setSelectedItem(item)}
+              >
+                <div className="flex">
+                  {/* Image */}
+                  <div className="w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 p-4">
+                    <div className="flex justify-between items-start mb-2">
+                      <div>
+                        <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                          {item.name}
+                          {item.popular && (
+                            <span className="bg-orange-500 text-white text-xs px-2 py-0.5 rounded-full flex items-center gap-1">
+                              <Star fontSize="small" className="!text-xs" />
+                              Popular
+                            </span>
+                          )}
+                          {item.chefRecommendation && (
+                            <span className="bg-purple-500 text-white text-xs px-2 py-0.5 rounded-full">
+                              Chef's Pick
+                            </span>
+                          )}
+                        </h3>
+                        {item.origin && (
+                          <p className="text-xs text-gray-500 mt-1">{item.origin}</p>
+                        )}
+                      </div>
+                      <span className="text-xl font-bold text-orange-400">
+                        ${item.price}
+                      </span>
+                    </div>
+
+                    <p className="text-gray-400 text-sm mb-3 line-clamp-2">
+                      {item.description}
+                    </p>
+
+                    {/* Item details */}
+                    <div className="flex flex-wrap gap-2 mb-2">
+                      {item.calories && (
+                        <span className="text-xs text-gray-500 flex items-center gap-1">
+                          <LocalFireDepartment fontSize="small" className="!text-xs" />
+                          {item.calories} cal
+                        </span>
+                      )}
+                      {item.sizes && (
+                        <span className="text-xs text-gray-500">
+                          {item.sizes.length > 1 ? `${item.sizes.length} sizes` : item.sizes[0]}
+                        </span>
+                      )}
+                      {item.vegetarian && (
+                        <span className="text-xs bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full">
+                          Vegetarian
+                        </span>
+                      )}
+                      {item.vegan && (
+                        <span className="text-xs bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full">
+                          Vegan
+                        </span>
+                      )}
+                      {item.glutenFree && (
+                        <span className="text-xs bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded-full">
+                          GF
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Dietary tags */}
+                    {(item.roast || item.notes) && (
+                      <div className="flex flex-wrap gap-2 mt-2 text-xs text-gray-500">
+                        {item.roast && <span>{item.roast} Roast</span>}
+                        {item.notes && <span>• {item.notes}</span>}
+                      </div>
+                    )}
+
+                    {/* Click for more indicator */}
+                    <div className="mt-2 text-xs text-orange-400 flex items-center gap-1">
+                      <span>Click for details</span>
+                      <span>→</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {categoryItems.length === 0 && (
+            <motion.div
+              className="text-center py-12"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              <p className="text-gray-400 text-lg">No items in this category</p>
+            </motion.div>
+          )}
+        </div>
+      </section>
+
+      {/* Item Detail Modal */}
+      <AnimatePresence>
+        {selectedItem && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedItem(null)}
+          >
+            <motion.div
+              className="bg-gray-800 rounded-xl max-w-2xl w-full overflow-hidden border border-gray-700"
+              initial={{ scale: 0.8, y: 50 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.8, y: 50 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={selectedItem.image}
+                alt={selectedItem.name}
+                className="w-full h-64 object-cover"
+              />
+              
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <h2 className="text-2xl font-bold text-white">
+                        {selectedItem.name}
+                      </h2>
+                      {selectedItem.popular && (
+                        <span className="bg-orange-500 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                          <Star fontSize="small" className="!text-xs" />
+                          Popular
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-gray-300 text-lg">
+                      {selectedItem.description}
+                    </p>
+                  </div>
+                  <span className="text-3xl font-bold text-orange-400">
+                    ${selectedItem.price}
+                  </span>
+                </div>
+
+                {/* Detailed Information */}
+                <div className="space-y-4">
+                  {/* Origin & Details */}
+                  {(selectedItem.origin || selectedItem.roast || selectedItem.notes) && (
+                    <div className="bg-gray-700/50 p-4 rounded-lg">
+                      <h3 className="text-white font-semibold mb-2">Details</h3>
+                      <div className="grid grid-cols-2 gap-2 text-sm">
+                        {selectedItem.origin && (
+                          <div>
+                            <span className="text-gray-400">Origin:</span>
+                            <span className="text-white ml-2">{selectedItem.origin}</span>
+                          </div>
+                        )}
+                        {selectedItem.roast && (
+                          <div>
+                            <span className="text-gray-400">Roast:</span>
+                            <span className="text-white ml-2">{selectedItem.roast}</span>
+                          </div>
+                        )}
+                        {selectedItem.notes && (
+                          <div className="col-span-2">
+                            <span className="text-gray-400">Tasting Notes:</span>
+                            <span className="text-white ml-2">{selectedItem.notes}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Sizes */}
+                  {selectedItem.sizes && (
+                    <div className="bg-gray-700/50 p-4 rounded-lg">
+                      <h3 className="text-white font-semibold mb-2">Available Sizes</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedItem.sizes.map((size, index) => (
+                          <span key={index} className="bg-gray-600 text-white px-3 py-1 rounded-full text-sm">
+                            {size}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Dietary & Allergens */}
+                  <div className="bg-gray-700/50 p-4 rounded-lg">
+                    <h3 className="text-white font-semibold mb-2">Dietary Information</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedItem.vegetarian && (
+                        <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm">
+                          Vegetarian
+                        </span>
+                      )}
+                      {selectedItem.vegan && (
+                        <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm">
+                          Vegan
+                        </span>
+                      )}
+                      {selectedItem.glutenFree && (
+                        <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm">
+                          Gluten Free
+                        </span>
+                      )}
+                      {selectedItem.calories && (
+                        <span className="bg-gray-600 text-gray-300 px-3 py-1 rounded-full text-sm">
+                          {selectedItem.calories} calories
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Contains/Allergens */}
+                  {selectedItem.contains && (
+                    <div className="bg-gray-700/50 p-4 rounded-lg">
+                      <h3 className="text-white font-semibold mb-2">Contains</h3>
+                      <p className="text-gray-300 text-sm">{selectedItem.contains}</p>
+                    </div>
+                  )}
+
+                  {/* Add-ons if available */}
+                  {selectedItem.addOns && (
+                    <div className="bg-gray-700/50 p-4 rounded-lg">
+                      <h3 className="text-white font-semibold mb-2">Add-ons Available</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedItem.addOns.map((addon, index) => (
+                          <span key={index} className="bg-gray-600 text-white px-3 py-1 rounded-full text-sm">
+                            + {addon}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <button
+                  className="w-full mt-6 bg-gray-700 text-white py-3 rounded-lg hover:bg-gray-600 transition-colors font-semibold"
+                  onClick={() => setSelectedItem(null)}
+                >
+                  Close
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+    </div>
   );
 };
 
-export default CoffeeMenu;
