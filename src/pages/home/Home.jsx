@@ -12,10 +12,10 @@ import { ProductList } from "../../components/product/ProductList";
 export default function Home() {
   return (
     <>
-      <div className="w-full text-black">
+      <div className="w-full text-black mt-18 rounded-2xl">
         <div className="text-white dark:text-white">
           {/* Header */}
-          <div className="w-full text-white">
+          <div className="w-full text-white ">
             <div className="w-full text-white dark:text-white">
               <Hero />
             </div>

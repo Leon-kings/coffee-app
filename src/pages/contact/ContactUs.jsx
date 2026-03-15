@@ -532,18 +532,8 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="w-full bg-gradient-to-b from-gray-900 to-black mt-10 py-20 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "url('https://www.transparenttextures.com/patterns/coffee-beans.png')",
-            backgroundRepeat: "repeat",
-            backgroundSize: "100px"
-          }}
-        />
-      </div>
+    <section className="w-full bg-gradient-to-b from-gray-900 to-gray-900 py-20 relative overflow-hidden">
+
 
       {/* Floating Coffee Beans */}
       {[...Array(8)].map((_, i) => (

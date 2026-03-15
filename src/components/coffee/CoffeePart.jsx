@@ -62,55 +62,42 @@
 
 // export default CoffeeSection;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import LocalCafeIcon from '@mui/icons-material/LocalCafe';
-import StarIcon from '@mui/icons-material/Star';
-import StarHalfIcon from '@mui/icons-material/StarHalf';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import WhatshotIcon from '@mui/icons-material/Whatshot';
-import OpacityIcon from '@mui/icons-material/Opacity';
-import GrassIcon from '@mui/icons-material/Grass';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import CloseIcon from '@mui/icons-material/Close';
-import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
-import GrainIcon from '@mui/icons-material/Grain';
-import NewReleasesIcon from '@mui/icons-material/NewReleases';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import RestaurantIcon from '@mui/icons-material/Restaurant';
-import FreeBreakfastIcon from '@mui/icons-material/FreeBreakfast';
-import CoffeeIcon from '@mui/icons-material/Coffee';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
-import SpaIcon from '@mui/icons-material/Spa';
-import TimerIcon from '@mui/icons-material/Timer';
+import LocalCafeIcon from "@mui/icons-material/LocalCafe";
+import StarIcon from "@mui/icons-material/Star";
+import StarHalfIcon from "@mui/icons-material/StarHalf";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import WhatshotIcon from "@mui/icons-material/Whatshot";
+import OpacityIcon from "@mui/icons-material/Opacity";
+import GrassIcon from "@mui/icons-material/Grass";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import CloseIcon from "@mui/icons-material/Close";
+import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
+import GrainIcon from "@mui/icons-material/Grain";
+import NewReleasesIcon from "@mui/icons-material/NewReleases";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import RestaurantIcon from "@mui/icons-material/Restaurant";
+import FreeBreakfastIcon from "@mui/icons-material/FreeBreakfast";
+import CoffeeIcon from "@mui/icons-material/Coffee";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
+import SpaIcon from "@mui/icons-material/Spa";
+import TimerIcon from "@mui/icons-material/Timer";
 
 // Coffee data with images and details
 export const coffeeItems = [
   {
     id: 1,
     title: "Espresso Romano",
-    description: "Rich espresso with a twist of lemon, creating a perfect balance of bitterness and citrus. A traditional Italian favorite that awakens the senses.",
-    longDescription: "Our signature Espresso Romano is a tribute to Italian coffee culture. Made from premium Arabica beans, this intense shot of espresso is served with a twist of fresh lemon peel, which cuts through the richness and adds a bright, citrusy note. The result is a harmonious balance of bold coffee flavor and refreshing zest that awakens the senses.",
+    description:
+      "Rich espresso with a twist of lemon, creating a perfect balance of bitterness and citrus. A traditional Italian favorite that awakens the senses.",
+    longDescription:
+      "Our signature Espresso Romano is a tribute to Italian coffee culture. Made from premium Arabica beans, this intense shot of espresso is served with a twist of fresh lemon peel, which cuts through the richness and adds a bright, citrusy note. The result is a harmonious balance of bold coffee flavor and refreshing zest that awakens the senses.",
     image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600",
     category: "Espresso",
     origin: "Italy",
@@ -121,13 +108,15 @@ export const coffeeItems = [
     bestTime: "Morning",
     calories: 5,
     caffeine: "High",
-    intensity: "Bold"
+    intensity: "Bold",
   },
   {
     id: 2,
     title: "Caramel Macchiato",
-    description: "Freshly steamed milk with vanilla-flavored syrup, marked with espresso and topped with caramel drizzle.",
-    longDescription: "Indulge in our signature Caramel Macchiato, a beautifully layered beverage that's as stunning as it is delicious. We start with creamy vanilla syrup, add steamed milk, and then 'mark' it with a shot of our rich espresso. The final touch is a crosshatch of buttery caramel drizzle that slowly sinks through the layers, creating a sweet, velvety experience in every sip.",
+    description:
+      "Freshly steamed milk with vanilla-flavored syrup, marked with espresso and topped with caramel drizzle.",
+    longDescription:
+      "Indulge in our signature Caramel Macchiato, a beautifully layered beverage that's as stunning as it is delicious. We start with creamy vanilla syrup, add steamed milk, and then 'mark' it with a shot of our rich espresso. The final touch is a crosshatch of buttery caramel drizzle that slowly sinks through the layers, creating a sweet, velvety experience in every sip.",
     image: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=600",
     category: "Specialty",
     origin: "Colombia",
@@ -138,13 +127,15 @@ export const coffeeItems = [
     bestTime: "Afternoon",
     calories: 250,
     caffeine: "Medium",
-    intensity: "Medium"
+    intensity: "Medium",
   },
   {
     id: 3,
     title: "Mocha Deluxe",
-    description: "Rich chocolate and espresso combined with steamed milk, topped with whipped cream and chocolate shavings.",
-    longDescription: "For chocolate and coffee lovers alike, our Mocha Deluxe is pure bliss. We combine our signature espresso with rich, velvety chocolate syrup and steamed milk, creating a perfect harmony of bitter and sweet. Topped with a generous swirl of whipped cream and a dusting of cocoa powder, this indulgent drink is like a dessert in a cup.",
+    description:
+      "Rich chocolate and espresso combined with steamed milk, topped with whipped cream and chocolate shavings.",
+    longDescription:
+      "For chocolate and coffee lovers alike, our Mocha Deluxe is pure bliss. We combine our signature espresso with rich, velvety chocolate syrup and steamed milk, creating a perfect harmony of bitter and sweet. Topped with a generous swirl of whipped cream and a dusting of cocoa powder, this indulgent drink is like a dessert in a cup.",
     image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600",
     category: "Chocolate",
     origin: "Brazil",
@@ -155,13 +146,15 @@ export const coffeeItems = [
     bestTime: "Evening dessert",
     calories: 320,
     caffeine: "Medium",
-    intensity: "Rich"
+    intensity: "Rich",
   },
   {
     id: 4,
     title: "Cold Brew Black",
-    description: "Smooth, cold-brewed coffee served over ice for a refreshing experience with zero bitterness.",
-    longDescription: "Our Cold Brew Black is crafted through a 16-hour slow-steeping process that extracts the coffee's natural sweetness and reduces acidity. The result is an incredibly smooth, full-bodied coffee concentrate that we serve over ice. Unlike traditional iced coffee, our cold brew never tastes bitter or watered down – just pure, refreshing coffee flavor.",
+    description:
+      "Smooth, cold-brewed coffee served over ice for a refreshing experience with zero bitterness.",
+    longDescription:
+      "Our Cold Brew Black is crafted through a 16-hour slow-steeping process that extracts the coffee's natural sweetness and reduces acidity. The result is an incredibly smooth, full-bodied coffee concentrate that we serve over ice. Unlike traditional iced coffee, our cold brew never tastes bitter or watered down – just pure, refreshing coffee flavor.",
     image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600",
     category: "Cold",
     origin: "Ethiopia",
@@ -172,13 +165,15 @@ export const coffeeItems = [
     bestTime: "Afternoon refreshment",
     calories: 10,
     caffeine: "High",
-    intensity: "Smooth"
+    intensity: "Smooth",
   },
   {
     id: 5,
     title: "French Vanilla Latte",
-    description: "Smooth espresso with creamy vanilla and steamed milk, creating a comforting and aromatic experience.",
-    longDescription: "Experience the classic comfort of our French Vanilla Latte. We start with a smooth shot of espresso, add rich vanilla syrup, and finish with perfectly steamed milk for a creamy, dreamy texture. The vanilla flavor is warm and authentic – not too sweet, with hints of caramel and hazelnut that complement rather than mask the quality of our espresso.",
+    description:
+      "Smooth espresso with creamy vanilla and steamed milk, creating a comforting and aromatic experience.",
+    longDescription:
+      "Experience the classic comfort of our French Vanilla Latte. We start with a smooth shot of espresso, add rich vanilla syrup, and finish with perfectly steamed milk for a creamy, dreamy texture. The vanilla flavor is warm and authentic – not too sweet, with hints of caramel and hazelnut that complement rather than mask the quality of our espresso.",
     image: "https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?w=600",
     category: "Latte",
     origin: "Guatemala",
@@ -189,13 +184,15 @@ export const coffeeItems = [
     bestTime: "All day",
     calories: 190,
     caffeine: "Medium",
-    intensity: "Creamy"
+    intensity: "Creamy",
   },
   {
     id: 6,
     title: "Yemeni Specialty",
-    description: "Exclusive premium coffee from the ancient mountains of Yemen, with notes of wine and dark chocolate.",
-    longDescription: "Our Yemeni Specialty is a rare and exclusive coffee that takes you on a journey through coffee history. Grown in the terraced mountains of Yemen at high altitudes, these beans are naturally processed and sun-dried, resulting in a complex flavor profile with notes of wine, dark chocolate, and dried fruits. This is not just coffee – it's an experience that connects you to the origins of coffee cultivation. Due to its rarity and exceptional quality, this special coffee requires its own dedicated page to fully appreciate its story.",
+    description:
+      "Exclusive premium coffee from the ancient mountains of Yemen, with notes of wine and dark chocolate.",
+    longDescription:
+      "Our Yemeni Specialty is a rare and exclusive coffee that takes you on a journey through coffee history. Grown in the terraced mountains of Yemen at high altitudes, these beans are naturally processed and sun-dried, resulting in a complex flavor profile with notes of wine, dark chocolate, and dried fruits. This is not just coffee – it's an experience that connects you to the origins of coffee cultivation. Due to its rarity and exceptional quality, this special coffee requires its own dedicated page to fully appreciate its story.",
     image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600",
     category: "Specialty Reserve",
     origin: "Yemen",
@@ -206,8 +203,8 @@ export const coffeeItems = [
     bestTime: "Special occasions",
     calories: 5,
     caffeine: "Medium",
-    intensity: "Complex"
-  }
+    intensity: "Complex",
+  },
 ];
 
 export const CoffeeSection = () => {
@@ -218,28 +215,52 @@ export const CoffeeSection = () => {
   // Enhanced coffee data with additional details
   const enhancedCoffeeItems = coffeeItems.map((item, index) => ({
     ...item,
-    rating: (4.5 + (index * 0.1)).toFixed(1),
+    rating: (4.5 + index * 0.1).toFixed(1),
     reviews: Math.floor(120 + index * 30),
     price: (4.99 + index * 0.5).toFixed(2),
-    badge: index === 0 ? "Bestseller" : 
-           index === 1 ? "New Arrival" : 
-           index === 2 ? "Popular" : 
-           index === 4 ? "Customer Favorite" :
-           index === 5 ? "Limited Edition" : "Signature",
-    badgeIcon: index === 0 ? <EmojiEventsIcon className="text-xs" /> : 
-               index === 1 ? <NewReleasesIcon className="text-xs" /> : 
-               index === 2 ? <TrendingUpIcon className="text-xs" /> :
-               index === 4 ? <FreeBreakfastIcon className="text-xs" /> :
-               index === 5 ? <LocalFireDepartmentIcon className="text-xs" /> :
-               <CoffeeIcon className="text-xs" />,
-    notes: ["Chocolate", "Caramel", "Berry", "Nutty", "Floral", "Citrus", "Spice", "Honey"][index % 8]
+    badge:
+      index === 0
+        ? "Bestseller"
+        : index === 1
+          ? "New Arrival"
+          : index === 2
+            ? "Popular"
+            : index === 4
+              ? "Customer Favorite"
+              : index === 5
+                ? "Limited Edition"
+                : "Signature",
+    badgeIcon:
+      index === 0 ? (
+        <EmojiEventsIcon className="text-xs" />
+      ) : index === 1 ? (
+        <NewReleasesIcon className="text-xs" />
+      ) : index === 2 ? (
+        <TrendingUpIcon className="text-xs" />
+      ) : index === 4 ? (
+        <FreeBreakfastIcon className="text-xs" />
+      ) : index === 5 ? (
+        <LocalFireDepartmentIcon className="text-xs" />
+      ) : (
+        <CoffeeIcon className="text-xs" />
+      ),
+    notes: [
+      "Chocolate",
+      "Caramel",
+      "Berry",
+      "Nutty",
+      "Floral",
+      "Citrus",
+      "Spice",
+      "Honey",
+    ][index % 8],
   }));
 
   // Handle view details click
   const handleViewDetails = (item) => {
     if (item.id === 6) {
       // Navigate to new page when id is 6 (Yemeni Specialty)
-      navigate('/special-coffee', { state: { coffee: item } });
+      navigate("/special-coffee", { state: { coffee: item } });
     } else {
       // Show modal for other items
       setSelectedItem(item);
@@ -253,134 +274,134 @@ export const CoffeeSection = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.15,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 50,
-      scale: 0.9
+      scale: 0.9,
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       scale: 1,
       transition: {
         type: "spring",
         stiffness: 100,
         damping: 15,
-        duration: 0.8
-      }
-    }
+        duration: 0.8,
+      },
+    },
   };
 
   const titleVariants = {
     hidden: { opacity: 0, y: -30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         type: "spring",
         stiffness: 200,
-        damping: 20
-      }
-    }
+        damping: 20,
+      },
+    },
   };
 
   const lineVariants = {
     hidden: { scaleX: 0, opacity: 0 },
-    visible: { 
-      scaleX: 1, 
+    visible: {
+      scaleX: 1,
       opacity: 1,
-      transition: { 
+      transition: {
         duration: 0.8,
-        ease: "easeInOut"
-      }
-    }
+        ease: "easeInOut",
+      },
+    },
   };
 
   const dotVariants = {
     hidden: { scale: 0, rotate: -180 },
-    visible: { 
-      scale: 1, 
+    visible: {
+      scale: 1,
       rotate: 0,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 300,
         damping: 15,
-        delay: 0.5
-      }
-    }
+        delay: 0.5,
+      },
+    },
   };
 
   const badgeVariants = {
     initial: { x: -50, opacity: 0, rotate: -45 },
-    animate: { 
-      x: 0, 
-      opacity: 1, 
+    animate: {
+      x: 0,
+      opacity: 1,
       rotate: 0,
       transition: {
         type: "spring",
         stiffness: 200,
-        damping: 20
-      }
+        damping: 20,
+      },
     },
-    hover: { 
+    hover: {
       scale: 1.1,
       rotate: [0, -5, 5, -5, 0],
       transition: {
         rotate: {
           repeat: Infinity,
           repeatType: "reverse",
-          duration: 0.5
-        }
-      }
-    }
+          duration: 0.5,
+        },
+      },
+    },
   };
 
   const imageVariants = {
-    hover: { 
+    hover: {
       scale: 1.1,
       rotate: 2,
       transition: {
         duration: 0.4,
-        ease: "easeInOut"
-      }
-    }
+        ease: "easeInOut",
+      },
+    },
   };
 
   const overlayVariants = {
     hidden: { opacity: 0 },
-    hover: { 
+    hover: {
       opacity: 1,
-      transition: { duration: 0.3 }
-    }
+      transition: { duration: 0.3 },
+    },
   };
 
   const buttonVariants = {
     hidden: { y: 20, opacity: 0 },
-    hover: { 
-      y: 0, 
+    hover: {
+      y: 0,
       opacity: 1,
       transition: {
         type: "spring",
         stiffness: 300,
-        damping: 20
-      }
+        damping: 20,
+      },
     },
-    tap: { scale: 0.95 }
+    tap: { scale: 0.95 },
   };
 
   const modalVariants = {
-    hidden: { 
+    hidden: {
       opacity: 0,
       scale: 0.8,
-      y: 50
+      y: 50,
     },
-    visible: { 
+    visible: {
       opacity: 1,
       scale: 1,
       y: 0,
@@ -388,27 +409,27 @@ export const CoffeeSection = () => {
         type: "spring",
         stiffness: 300,
         damping: 25,
-        duration: 0.5
-      }
+        duration: 0.5,
+      },
     },
-    exit: { 
+    exit: {
       opacity: 0,
       scale: 0.8,
       y: 50,
-      transition: { duration: 0.3 }
-    }
+      transition: { duration: 0.3 },
+    },
   };
 
   const overlayModalVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { duration: 0.3 }
+      transition: { duration: 0.3 },
     },
-    exit: { 
+    exit: {
       opacity: 0,
-      transition: { duration: 0.3 }
-    }
+      transition: { duration: 0.3 },
+    },
   };
 
   const featureVariants = {
@@ -420,23 +441,23 @@ export const CoffeeSection = () => {
         delay: i * 0.1,
         type: "spring",
         stiffness: 200,
-        damping: 20
-      }
-    })
+        damping: 20,
+      },
+    }),
   };
 
   const specialButtonVariants = {
     initial: { scale: 1 },
-    hover: { 
+    hover: {
       scale: 1.05,
       boxShadow: "0 10px 25px -5px rgba(249, 115, 22, 0.5)",
       transition: {
         type: "spring",
         stiffness: 400,
-        damping: 20
-      }
+        damping: 20,
+      },
     },
-    tap: { scale: 0.95 }
+    tap: { scale: 0.95 },
   };
 
   // Render stars for rating
@@ -446,22 +467,26 @@ export const CoffeeSection = () => {
     const hasHalf = rating % 1 !== 0;
 
     for (let i = 0; i < fullStars; i++) {
-      stars.push(<StarIcon key={`full-${i}`} className="text-yellow-400 !text-base sm:!text-lg" />);
+      stars.push(
+        <StarIcon
+          key={`full-${i}`}
+          className="text-yellow-400 !text-base sm:!text-lg"
+        />,
+      );
     }
     if (hasHalf) {
-      stars.push(<StarHalfIcon key="half" className="text-yellow-400 !text-base sm:!text-lg" />);
+      stars.push(
+        <StarHalfIcon
+          key="half"
+          className="text-yellow-400 !text-base sm:!text-lg"
+        />,
+      );
     }
     return stars;
   };
 
   return (
-    <section 
-      id="coffee" 
-      className="coffee_area pt-16 sm:pt-20 md:pt-24 lg:pt-32 pb-12 sm:pb-16 md:pb-20 relative overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, #1a0f0a 0%, #2d1a12 50%, #1a0f0a 100%)"
-      }}
-    >
+    <section className="bg-gradient-to-b from-gray-900 to-gray-900 pt-16 sm:pt-20 md:pt-24 lg:pt-32 pb-12 sm:pb-16 md:pb-20 relative overflow-hidden">
       {/* Animated Background Elements */}
       {[...Array(8)].map((_, i) => (
         <motion.div
@@ -471,68 +496,70 @@ export const CoffeeSection = () => {
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
             fontSize: `${i % 2 === 0 ? 20 : 40}px`,
-            display: i > 5 ? 'none' : 'block',
+            display: i > 5 ? "none" : "block",
           }}
           animate={{
             y: [0, -30, 0],
             x: [0, Math.random() * 20 - 10, 0],
             rotate: [0, 360],
-            opacity: [0.1, 0.2, 0.1]
+            opacity: [0.1, 0.2, 0.1],
           }}
           transition={{
             duration: 10 + Math.random() * 10,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
           }}
         >
-          <LocalCafeIcon style={{ fontSize: 'inherit' }} />
+          <LocalCafeIcon style={{ fontSize: "inherit" }} />
         </motion.div>
       ))}
 
       <div className="container mx-auto px-4 xs:px-2 sm:px-4 md:px-6 lg:px-8 relative z-10">
         <div className="flex justify-center">
           <div className="w-full max-w-4xl">
-            <motion.div 
+            <motion.div
               className="section_title text-center pb-8 sm:pb-10 md:pb-12"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
             >
-              <motion.h4 
+              <motion.h4
                 className="title text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-3 md:mb-4"
                 variants={titleVariants}
                 style={{
-                  background: "linear-gradient(135deg, #fbbf24 0%, #f97316 50%, #fbbf24 100%)",
+                  background:
+                    "linear-gradient(135deg, #fbbf24 0%, #f97316 50%, #fbbf24 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
-                  backgroundSize: "200% 200%"
+                  backgroundSize: "200% 200%",
                 }}
                 animate={{
-                  backgroundPosition: ["0% 0%", "100% 100%"]
+                  backgroundPosition: ["0% 0%", "100% 100%"],
                 }}
                 transition={{
                   duration: 5,
                   repeat: Infinity,
-                  repeatType: "reverse"
+                  repeatType: "reverse",
                 }}
               >
                 Our Specials
               </motion.h4>
-              
-              <motion.p 
+
+              <motion.p
                 className="text-gray-300 text-xs xs:text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4"
                 variants={titleVariants}
                 transition={{ delay: 0.2 }}
               >
-                Discover our handcrafted selection of premium coffees, 
-                roasted to perfection for an unforgettable experience
+                Discover our handcrafted selection of premium coffees, roasted
+                to perfection for an unforgettable experience
               </motion.p>
-              
+
               <motion.span
                 className="line block w-16 xs:w-20 sm:w-24 h-1 mx-auto mt-4 sm:mt-5 md:mt-6 relative"
                 variants={lineVariants}
                 style={{
-                  background: "linear-gradient(90deg, transparent, #f97316, #fbbf24, #f97316, transparent)"
+                  background:
+                    "linear-gradient(90deg, transparent, #f97316, #fbbf24, #f97316, transparent)",
                 }}
               >
                 <motion.span
@@ -541,7 +568,7 @@ export const CoffeeSection = () => {
                   style={{
                     background: "radial-gradient(circle, #fbbf24, #f97316)",
                     left: "calc(50% - 4px)",
-                    boxShadow: "0 0 15px #f97316"
+                    boxShadow: "0 0 15px #f97316",
                   }}
                 />
               </motion.span>
@@ -550,7 +577,7 @@ export const CoffeeSection = () => {
         </div>
 
         {/* Coffee Items Grid */}
-        <motion.div 
+        <motion.div
           className="w-full grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 xs:gap-5 sm:gap-6 md:gap-7 lg:gap-8 justify-center"
           variants={containerVariants}
           initial="hidden"
@@ -568,7 +595,7 @@ export const CoffeeSection = () => {
               {/* Card Container */}
               <motion.div
                 className={`bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl xs:rounded-2xl sm:rounded-3xl p-4 xs:p-5 sm:p-6 text-gray-800 shadow-2xl relative overflow-hidden group cursor-pointer ${
-                  item.id === 6 ? 'ring-2 ring-orange-500 ring-opacity-50' : ''
+                  item.id === 6 ? "ring-2 ring-orange-500 ring-opacity-50" : ""
                 }`}
                 whileHover={{
                   y: -10,
@@ -576,8 +603,8 @@ export const CoffeeSection = () => {
                   transition: {
                     type: "spring",
                     stiffness: 400,
-                    damping: 25
-                  }
+                    damping: 25,
+                  },
                 }}
                 onClick={() => handleViewDetails(item)}
               >
@@ -587,11 +614,11 @@ export const CoffeeSection = () => {
                     className="absolute -top-1 -right-1 z-30"
                     initial={{ scale: 0, rotate: -180 }}
                     animate={{ scale: 1, rotate: 0 }}
-                    transition={{ 
+                    transition={{
                       type: "spring",
                       stiffness: 260,
                       damping: 20,
-                      delay: 0.5
+                      delay: 0.5,
                     }}
                   >
                     <div className="bg-gradient-to-r from-purple-600 to-orange-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg flex items-center gap-1 shadow-lg">
@@ -606,15 +633,15 @@ export const CoffeeSection = () => {
                   className="absolute -right-10 -top-10 w-20 xs:w-24 sm:w-32 md:w-40 h-20 xs:h-24 sm:h-32 md:h-40 rounded-full opacity-10"
                   animate={{
                     scale: [1, 1.2, 1],
-                    rotate: [0, 180, 360]
+                    rotate: [0, 180, 360],
                   }}
                   transition={{
                     duration: 15,
                     repeat: Infinity,
-                    ease: "linear"
+                    ease: "linear",
                   }}
                   style={{
-                    background: "radial-gradient(circle, #f97316, transparent)"
+                    background: "radial-gradient(circle, #f97316, transparent)",
                   }}
                 />
 
@@ -644,7 +671,7 @@ export const CoffeeSection = () => {
                     className="w-full h-full object-cover"
                     variants={imageVariants}
                   />
-                  
+
                   {/* Image Overlay with Quick View */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end justify-center pb-2 xs:pb-3 sm:pb-4 md:pb-6"
@@ -654,9 +681,9 @@ export const CoffeeSection = () => {
                   >
                     <motion.button
                       className={`${
-                        item.id === 6 
-                          ? 'bg-gradient-to-r from-purple-600 to-orange-600' 
-                          : 'bg-orange-500'
+                        item.id === 6
+                          ? "bg-gradient-to-r from-purple-600 to-orange-600"
+                          : "bg-orange-500"
                       } text-white p-2 xs:p-2.5 sm:p-3 rounded-full shadow-lg`}
                       variants={buttonVariants}
                       whileHover="hover"
@@ -680,12 +707,12 @@ export const CoffeeSection = () => {
                       className="absolute top-2 left-2 bg-purple-600 text-white p-1 rounded-full"
                       animate={{
                         scale: [1, 1.2, 1],
-                        rotate: [0, 360]
+                        rotate: [0, 360],
                       }}
                       transition={{
                         duration: 2,
                         repeat: Infinity,
-                        ease: "linear"
+                        ease: "linear",
                       }}
                     >
                       <MenuBookIcon className="!text-xs" />
@@ -694,34 +721,36 @@ export const CoffeeSection = () => {
                 </motion.div>
 
                 {/* Content */}
-                <motion.div 
+                <motion.div
                   className="coffee_content relative z-10"
                   animate={{
-                    y: hoveredItem === item.id ? -5 : 0
+                    y: hoveredItem === item.id ? -5 : 0,
                   }}
                   transition={{ duration: 0.3 }}
                 >
                   <div className="flex flex-col xs:flex-row justify-between items-start xs:items-center gap-1 xs:gap-2 mb-2 xs:mb-3">
-                    <motion.h4 
+                    <motion.h4
                       className="coffee_title text-base xs:text-lg sm:text-xl md:text-2xl font-bold"
                       whileHover={{ x: 5 }}
                       style={{
                         background: "linear-gradient(135deg, #7c2d12, #9a3412)",
                         WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent"
+                        WebkitTextFillColor: "transparent",
                       }}
                     >
                       {item.title}
                     </motion.h4>
-                    
+
                     {/* Price */}
                     <motion.div
                       className="text-left xs:text-right"
                       animate={{
-                        scale: hoveredItem === item.id ? 1.1 : 1
+                        scale: hoveredItem === item.id ? 1.1 : 1,
                       }}
                     >
-                      <span className="text-[10px] xs:text-xs text-gray-500">from</span>
+                      <span className="text-[10px] xs:text-xs text-gray-500">
+                        from
+                      </span>
                       <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-orange-600">
                         ${item.price}
                       </p>
@@ -744,10 +773,10 @@ export const CoffeeSection = () => {
                   </p>
 
                   {/* Coffee Details Tags */}
-                  <motion.div 
+                  <motion.div
                     className="flex flex-wrap gap-1 xs:gap-1.5 sm:gap-2 mb-2 xs:mb-3 sm:mb-4"
                     animate={{
-                      y: hoveredItem === item.id ? -3 : 0
+                      y: hoveredItem === item.id ? -3 : 0,
                     }}
                   >
                     <motion.span
@@ -756,49 +785,55 @@ export const CoffeeSection = () => {
                         scale: 1.1,
                         backgroundColor: "#f97316",
                         color: "#ffffff",
-                        transition: { duration: 0.2 }
+                        transition: { duration: 0.2 },
                       }}
                     >
                       <LocationOnIcon className="!text-[10px] xs:!text-xs" />
                       <span className="hidden xs:inline">{item.origin}</span>
-                      <span className="xs:hidden">{item.origin.slice(0, 3)}</span>
+                      <span className="xs:hidden">
+                        {item.origin.slice(0, 3)}
+                      </span>
                     </motion.span>
-                    
+
                     <motion.span
                       className="text-[8px] xs:text-[10px] sm:text-xs px-1.5 xs:px-2 sm:px-3 py-0.5 xs:py-1 rounded-full bg-orange-100 text-orange-800 flex items-center gap-0.5 xs:gap-1"
                       whileHover={{
                         scale: 1.1,
                         backgroundColor: "#f97316",
                         color: "#ffffff",
-                        transition: { duration: 0.2 }
+                        transition: { duration: 0.2 },
                       }}
                     >
                       <LocalFireDepartmentIcon className="!text-[10px] xs:!text-xs" />
                       <span className="hidden xs:inline">{item.roast}</span>
-                      <span className="xs:hidden">{item.roast.slice(0, 3)}</span>
+                      <span className="xs:hidden">
+                        {item.roast.slice(0, 3)}
+                      </span>
                     </motion.span>
-                    
+
                     <motion.span
                       className="text-[8px] xs:text-[10px] sm:text-xs px-1.5 xs:px-2 sm:px-3 py-0.5 xs:py-1 rounded-full bg-orange-100 text-orange-800 flex items-center gap-0.5 xs:gap-1"
                       whileHover={{
                         scale: 1.1,
                         backgroundColor: "#f97316",
                         color: "#ffffff",
-                        transition: { duration: 0.2 }
+                        transition: { duration: 0.2 },
                       }}
                     >
                       <GrassIcon className="!text-[10px] xs:!text-xs" />
                       <span className="hidden xs:inline">{item.notes}</span>
-                      <span className="xs:hidden">{item.notes.slice(0, 3)}</span>
+                      <span className="xs:hidden">
+                        {item.notes.slice(0, 3)}
+                      </span>
                     </motion.span>
                   </motion.div>
 
                   {/* View Details Button - Different for Yemeni Coffee */}
                   <motion.button
                     className={`w-full ${
-                      item.id === 6 
-                        ? 'bg-gradient-to-r from-purple-600 to-orange-600' 
-                        : 'bg-gradient-to-r from-orange-500 to-amber-500'
+                      item.id === 6
+                        ? "bg-gradient-to-r from-purple-600 to-orange-600"
+                        : "bg-gradient-to-r from-orange-500 to-amber-500"
                     } text-white py-2 xs:py-2.5 sm:py-3 rounded-lg xs:rounded-xl text-xs xs:text-sm sm:text-base font-semibold flex items-center justify-center gap-1 xs:gap-2 group`}
                     variants={specialButtonVariants}
                     initial="initial"
@@ -810,11 +845,11 @@ export const CoffeeSection = () => {
                     }}
                   >
                     <span>
-                      {item.id === 6 ? 'Learn More About This Special Coffee' : 'View Details'}
+                      {item.id === 6
+                        ? "Learn More About This Special Coffee"
+                        : "View Details"}
                     </span>
-                    <ArrowForwardIcon 
-                      className="!text-sm xs:!text-base sm:!text-lg group-hover:translate-x-1 transition-transform"
-                    />
+                    <ArrowForwardIcon className="!text-sm xs:!text-base sm:!text-lg group-hover:translate-x-1 transition-transform" />
                   </motion.button>
 
                   {/* Special Note for Yemeni Coffee */}
@@ -834,16 +869,17 @@ export const CoffeeSection = () => {
                 <motion.div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none"
                   style={{
-                    background: "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.3) 45%, transparent 50%)",
-                    transform: "translateX(-100%)"
+                    background:
+                      "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.3) 45%, transparent 50%)",
+                    transform: "translateX(-100%)",
                   }}
                   animate={{
-                    x: ["100%", "-100%"]
+                    x: ["100%", "-100%"],
                   }}
                   transition={{
                     duration: 1.5,
                     repeat: Infinity,
-                    ease: "linear"
+                    ease: "linear",
                   }}
                 />
               </motion.div>
@@ -863,7 +899,7 @@ export const CoffeeSection = () => {
             exit="exit"
             style={{
               background: "rgba(0,0,0,0.8)",
-              backdropFilter: "blur(10px)"
+              backdropFilter: "blur(10px)",
             }}
             onClick={() => setSelectedItem(null)}
           >
@@ -897,7 +933,7 @@ export const CoffeeSection = () => {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ delay: 0.2 }}
                     />
-                    
+
                     <div className="grid grid-cols-4 gap-1 xs:gap-1.5 sm:gap-2 mt-2 xs:mt-3 sm:mt-4">
                       {[...Array(4)].map((_, i) => (
                         <motion.img
@@ -915,21 +951,21 @@ export const CoffeeSection = () => {
                   </div>
 
                   <div>
-                    <motion.div 
+                    <motion.div
                       className="space-y-2 xs:space-y-3 sm:space-y-4"
                       initial="hidden"
                       animate="visible"
                       variants={{
                         visible: {
                           transition: {
-                            staggerChildren: 0.1
-                          }
-                        }
+                            staggerChildren: 0.1,
+                          },
+                        },
                       }}
                     >
                       {/* Feature Grid */}
                       <div className="grid grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
-                        <motion.div 
+                        <motion.div
                           className="flex items-center gap-2 xs:gap-3 sm:gap-4"
                           variants={featureVariants}
                           custom={0}
@@ -938,14 +974,16 @@ export const CoffeeSection = () => {
                             <LocalCafeIcon className="!text-orange-600 !text-base xs:!text-lg sm:!text-xl md:!text-2xl" />
                           </div>
                           <div>
-                            <p className="text-[10px] xs:text-xs text-gray-500">Origin</p>
+                            <p className="text-[10px] xs:text-xs text-gray-500">
+                              Origin
+                            </p>
                             <p className="font-semibold text-xs xs:text-sm sm:text-base">
                               {selectedItem.origin}
                             </p>
                           </div>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                           className="flex items-center gap-2 xs:gap-3 sm:gap-4"
                           variants={featureVariants}
                           custom={1}
@@ -954,14 +992,16 @@ export const CoffeeSection = () => {
                             <LocalFireDepartmentIcon className="!text-orange-600 !text-base xs:!text-lg sm:!text-xl md:!text-2xl" />
                           </div>
                           <div>
-                            <p className="text-[10px] xs:text-xs text-gray-500">Roast</p>
+                            <p className="text-[10px] xs:text-xs text-gray-500">
+                              Roast
+                            </p>
                             <p className="font-semibold text-xs xs:text-sm sm:text-base">
                               {selectedItem.roast}
                             </p>
                           </div>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                           className="flex items-center gap-2 xs:gap-3 sm:gap-4"
                           variants={featureVariants}
                           custom={2}
@@ -970,14 +1010,16 @@ export const CoffeeSection = () => {
                             <OpacityIcon className="!text-orange-600 !text-base xs:!text-lg sm:!text-xl md:!text-2xl" />
                           </div>
                           <div>
-                            <p className="text-[10px] xs:text-xs text-gray-500">Method</p>
+                            <p className="text-[10px] xs:text-xs text-gray-500">
+                              Method
+                            </p>
                             <p className="font-semibold text-xs xs:text-sm sm:text-base">
                               {selectedItem.brewingMethod}
                             </p>
                           </div>
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                           className="flex items-center gap-2 xs:gap-3 sm:gap-4"
                           variants={featureVariants}
                           custom={3}
@@ -986,7 +1028,9 @@ export const CoffeeSection = () => {
                             <AccessTimeIcon className="!text-orange-600 !text-base xs:!text-lg sm:!text-xl md:!text-2xl" />
                           </div>
                           <div>
-                            <p className="text-[10px] xs:text-xs text-gray-500">Best Time</p>
+                            <p className="text-[10px] xs:text-xs text-gray-500">
+                              Best Time
+                            </p>
                             <p className="font-semibold text-xs xs:text-sm sm:text-base">
                               {selectedItem.bestTime}
                             </p>
@@ -995,35 +1039,51 @@ export const CoffeeSection = () => {
                       </div>
 
                       {/* Additional Info */}
-                      <motion.div 
+                      <motion.div
                         className="mt-4 xs:mt-5 sm:mt-6"
                         variants={featureVariants}
                         custom={4}
                       >
                         <div className="flex items-center gap-2 xs:gap-3 mb-2">
                           <GrainIcon className="text-orange-600 !text-base xs:!text-lg" />
-                          <span className="font-semibold text-xs xs:text-sm">Flavor Notes:</span>
-                          <span className="text-gray-600 text-xs xs:text-sm">{selectedItem.notes}</span>
+                          <span className="font-semibold text-xs xs:text-sm">
+                            Flavor Notes:
+                          </span>
+                          <span className="text-gray-600 text-xs xs:text-sm">
+                            {selectedItem.notes}
+                          </span>
                         </div>
                         <div className="flex items-center gap-2 xs:gap-3">
                           <WhatshotIcon className="text-orange-600 !text-base xs:!text-lg" />
-                          <span className="font-semibold text-xs xs:text-sm">Intensity:</span>
-                          <span className="text-gray-600 text-xs xs:text-sm">{selectedItem.intensity}</span>
+                          <span className="font-semibold text-xs xs:text-sm">
+                            Intensity:
+                          </span>
+                          <span className="text-gray-600 text-xs xs:text-sm">
+                            {selectedItem.intensity}
+                          </span>
                         </div>
                         <div className="flex items-center gap-2 xs:gap-3 mt-2">
                           <SpaIcon className="text-orange-600 !text-base xs:!text-lg" />
-                          <span className="font-semibold text-xs xs:text-sm">Aroma:</span>
-                          <span className="text-gray-600 text-xs xs:text-sm">{selectedItem.aroma}</span>
+                          <span className="font-semibold text-xs xs:text-sm">
+                            Aroma:
+                          </span>
+                          <span className="text-gray-600 text-xs xs:text-sm">
+                            {selectedItem.aroma}
+                          </span>
                         </div>
                         <div className="flex items-center gap-2 xs:gap-3 mt-2">
                           <TimerIcon className="text-orange-600 !text-base xs:!text-lg" />
-                          <span className="font-semibold text-xs xs:text-sm">Calories:</span>
-                          <span className="text-gray-600 text-xs xs:text-sm">{selectedItem.calories} cal</span>
+                          <span className="font-semibold text-xs xs:text-sm">
+                            Calories:
+                          </span>
+                          <span className="text-gray-600 text-xs xs:text-sm">
+                            {selectedItem.calories} cal
+                          </span>
                         </div>
                       </motion.div>
                     </motion.div>
 
-                    <motion.p 
+                    <motion.p
                       className="text-gray-600 mt-4 xs:mt-5 sm:mt-6 leading-relaxed text-xs xs:text-sm sm:text-base"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -1032,7 +1092,7 @@ export const CoffeeSection = () => {
                       {selectedItem.longDescription}
                     </motion.p>
 
-                    <motion.div 
+                    <motion.div
                       className="mt-4 xs:mt-5 sm:mt-6"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}

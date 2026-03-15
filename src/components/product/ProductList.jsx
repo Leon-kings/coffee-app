@@ -1649,12 +1649,10 @@ export const ProductList = () => {
   };
 
   return (
-    <section className="w-full py-16 bg-gradient-to-b from-gray-900 to-black min-h-screen">
+    <section className="w-full py-16 bg-gradient-to-b from-gray-900 to-gray-900 min-h-screen">
       <div className="container mx-auto px-4">
-
-
         {/* Header */}
-        <div id="page-1" className="text-center mb-12">
+        <div className="text-center mb-12">
           <motion.h2
             className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: -20 }}
